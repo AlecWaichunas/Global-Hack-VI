@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^$', views.index_view, name='index'),
     url(r'^intakeform/', views.intake_view, name='intakeform'),
     url(r'^register/', views.register_view, name='register'),
-    url(r'^shelter/(?P<shelter_id>[0-9]+)/', views.shelter_view, name='shelter')
+    url(r'^shelter/(?P<shelter_id>[0-9]+)/', views.shelter_view, name='shelter'),
+    url(r'^shelter/edit/', views.edit_shelter_view, name='editshelter'),
+    url(r'^logout/', views.logout_user, name='logout')
     # url(r'^hello/$', hello), #https://ghack-ethanx94.c9users.io/<regex>
     #url(r'^time/$', current_datetime), 
     # url(r'^contact/$', contact),

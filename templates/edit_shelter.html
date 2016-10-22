@@ -1,0 +1,70 @@
+{% extends 'app_base.html' %}
+
+{% block content %}
+
+<p>
+    <b>{{ shelter.shelter_name }}</b>
+    
+    <form action="{% url 'editshelter' %}" method='post'>
+        {% csrf_token %}
+        <label for="shelter_name">Shelter Name</label>
+        <input type="text" name="shelter_name" value="{{ shelter.shelter_name }}"/>
+        
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{ shelter.user.email }}"/>
+        
+        <label for="desc">Description</label>
+        <input type="text" name="desc" value="{{ shelter.shelter_desc }}"/>
+        <br>
+        <label for="supp_email">Support Email</label>
+        <input type="text" name="supp_email" value="{{ shelter.shelter_support_email }}">
+        
+        <label for="supp_tele">Support Telephone Number</label>
+        <input type=text name="supp_tele" value="{{ shelter.shelter_support_tele }}">
+        <br>
+        <label for="address">Address</label>
+        <input type="text" name="address" value="{{ shelter.shelter_address }}">
+        
+        <label for="city">City</label>
+        <input type="text" name="city" value="{{ shelter.shelter_city }}">
+        
+        <label for="state">State</label>
+        <input type="text" name="state" value="{{ shelter.shelter_state }}">
+        <br>
+        
+        <label for="room">Emergency Housing</label>
+        <input id="room_input" type="checkbox" name="room" {% if shelter.service_rooms.has_room_service %} checked {% endif %}>
+        
+        <div id="room_rooms" class="{% if not shelter.service_rooms.has_room_service %} hidden {% endif %}">
+            <label for="rooms_filled">Occupied Rooms</label>
+            <input type="number" name="rooms_filled" value="{{ shelter.service_rooms.filled_rooms }}" min="0"
+            max="{% if shelter.service_rooms.max_room == 0 %} 10000 {% else %} shelter.service_rooms.max_room {% endif %}">
+            
+            <label for="max_rooms">Max Roooms</label>
+            <input type="number" name="max_rooms" value="{{ shelter.service_rooms.max_room }}" min="0">
+        </div>
+        
+        
+        <label for="housing">Permenant Housing</label>
+        <input type="checkbox" name="housing" {% if shelter.service_house.has_house_service %} checked {% endif %}>
+        
+        <br>
+        <label for="physical_health">Physical Health Service</label>
+        <input type="checkbox" name="physical_health" {% if shelter.service_physical_illness.has_physical_health_service %} checked {% endif %}>
+        
+        <label for="mental_health">Mental Health Service</label>
+        <input type="checkbox" name="mental_health" {% if shelter.service_mental_illness.has_mental_health_service %} checked {% endif %}>
+    
+        <label for="veteran">Veteran Aid</label>
+        <input type="checkbox" name="veteran" {% if shelter.service_veteran_aid.has_veteran_aid_service %} checked {% endif %}>        
+        <br>
+        <label for="restrict">Restrictions</label>
+        <input type="text" name="restrict" value="{{ shelter.shelter_restrictions }}">
+        <br>
+        <a href="#">Change Password</a>
+        <br>
+        <input type="submit" name="submit" value="Save"/>
+    </form>
+</p>
+
+{% endblock %}

@@ -1,15 +1,4 @@
 
-.menu_bar{
-    width: 100%;
-    height: 50px;
-    background: blue;
-}
-
-.menu_bar_table{
-    width: 100%;
-    
-}
-
-.add_shelter_header{
-    color: white;
+.glyphicon {
+    background: transparent;
 }

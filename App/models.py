@@ -30,14 +30,16 @@ class VeteranAid(models.Model):
 
 class Shelter(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    userid = models.IntegerField()
     
+    shelter_name = models.CharField(max_length=500)
     shelter_support_email = models.CharField(max_length=200)
     shelter_support_tele = models.CharField(max_length=15)
     shelter_address = models.CharField(max_length=200)
     shelter_city = models.CharField(max_length=200)
     shelter_state = models.CharField(max_length=2)
     shelter_desc = models.CharField(max_length=5000)
-    
+    shelter_restrictions = models.CharField(max_length=2000)
     
     service_rooms = models.OneToOneField(RoomService)
     service_foods = models.OneToOneField(FoodService)
@@ -47,4 +49,4 @@ class Shelter(models.Model):
     service_veteran_aid = models.OneToOneField(VeteranAid)
     
     def __str__(self):
-        return self.user
+        return self.shelter_name

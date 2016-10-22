@@ -16,548 +16,448 @@ http://getbootstrap.com/css/#forms
 <div class="container">
     <h1 class="well">Client Intake Form</h1>
 	<div class="col-lg-12 well">
-	<div class="row">
-		<form>
-			<div class="col-sm-12">
+		<form action method="get">
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<label>Enrollment Date:</label>
+                        <div class="form-group">
+                            <div class='input-group date' id='enrollment_date'>
+                                <input type='text' class="form-control" name='enrollment_date' placeholder="Enrollment Date"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+				</div>	
+				<div class="col-sm-6 form-group">
+					<label>Bed Check-in Date:</label>
+                        <div class="form-group">
+                            <div class='input-group date' id='bed_date'>
+                                <input type='text' class="form-control" name='bed_date' placeholder="Bed Check-in Date"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+				</div>	
+			</div><!--end row-->
+			
 				<div class="row">
-					<div class="col-sm-4 form-group">
-						<label>First Name</label>
+					<div class="col-sm-6">
+					<label>First Name</label>
+					<div class="input-group">
+					     <input type="text" class="form-control" id="firstName" name='firstName' placeholder="First Name">
+					      <div class="input-group-btn">
+					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown1">
+					         <li><a href="#" data-value="Don't Know">Don't Know</a></li>
+					         <li><a href="#" data-value="N/A">N/A</a></li>
+					         <li><a href="#" data-value="Refused">Refused</a></li>
+					       </ul>
+					     </div><!-- /btn-group -->
+				      </div><!-- /input-group -->
+				   
+					<label>Middle Name</label>
+					<div class="input-group">
+					     <input type="text" class="form-control" id="middleName" name='middleName' placeholder="Middle Name">
+					      <div class="input-group-btn">
+					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown2">
+					         <li><a href="#">Don't Know</a></li>
+					         <li><a href="#">N/A</a></li>
+					         <li><a href="#">Refused</a></li>
+					       </ul>
+					     </div><!-- /btn-group -->
+				      </div><!-- /input-group -->
+				      
+					<label>Last Name</label>
+					<div class="input-group">
+					     <input type="text" class="form-control" id="lastName" name='lastName' placeholder="Last Name">
+					      <div class="input-group-btn">
+					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown3">
+					         <li><a href="#">Don't Know</a></li>
+					         <li><a href="#">N/A</a></li>
+					         <li><a href="#">Refused</a></li>
+					       </ul>
+					     </div><!-- /btn-group -->
+				      </div><!-- /input-group -->
+				      
+				    <label>Suffix</label>
+					<div class="input-group">
+					     <input type="text" class="form-control" id="suffixName" name='suffixName' placeholder="Suffix">
+					      <div class="input-group-btn">
+					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+					       <ul class="dropdown-menu dropdown-menu-right">
+					         <li><a href="#">Don't Know</a></li>
+					         <li><a href="#">N/A</a></li>
+					         <li><a href="#">Refused</a></li>
+					       </ul>
+					     </div><!-- /btn-group -->
+				      </div><!-- /input-group -->
+				      <div class="row col-sm-6">
+						<label>Birth Date:</label>
+                        <div class="form-group">
+                            <div class='input-group date' id='birth_date'>
+                                <input type='text' class="form-control" name='birth_date' placeholder="Birth Date"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div><!--/btn group-->
+					</div><!--/input-group-->
+				</div>
+				 
+				 <div class="col-sm-6">
+					<label>Facility Client will be housed in:</label>
+	            	<input class="form-control" type="text" name="clientFacility" id="clientFacility" placeholder="Client Housing Facility">
+	            	<label>Room Client will be housed in:</label>
+	            	<input class="form-control" type="text" name="clientRoom" id="clientRoom" placeholder="Client Room Number">
+	            	<label>Bed Client will be assigned:</label>
+	            	<input class="form-control" type="text" name="clientBed" id="clientBed" placeholder="Client Bed Number">
+	            </div>
+            </div><!--end row-->
+            
+			<div class="row">
+				<div class="col-sm-8 form-group">
+					<label>Social Security Number</label>
 						<div class="input-group">
-					      <input type="text" class="form-control" id="firstName" placeholder="First Name">
-					       <div class="input-group-btn">
-					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></button>
-					        <ul class="dropdown-menu dropdown-menu-right">
-					          <li><a href="#">Don't Know</a></li>
-					          <li><a href="#">N/A</a></li>
-					          <li><a href="#">Refused</a></li>
-					        </ul>
-					      </div><!-- /btn-group -->
-				       </div><!-- /input-group -->
-				    </div>
-				    <div class="col-sm-4 form-group">
-						<label>Middle Name</label>
-						<div class="input-group">
-					      <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
-					       <div class="input-group-btn">
-					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></button>
-					        <ul class="dropdown-menu dropdown-menu-right">
-					          <li><a href="#">Don't Know</a></li>
-					          <li><a href="#">N/A</a></li>
-					          <li><a href="#">Refused</a></li>
-					        </ul>
-					      </div><!-- /btn-group -->
-				       </div><!-- /input-group -->
-				    </div>
-					<div class="col-sm-4 form-group">
-						<label>Last Name</label>
-						<div class="input-group">
-					      <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-					       <div class="input-group-btn">
-					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></button>
-					        <ul class="dropdown-menu dropdown-menu-right">
-					          <li><a href="#">Don't Know</a></li>
-					          <li><a href="#">N/A</a></li>
-					          <li><a href="#">Refused</a></li>
-					        </ul>
-					      </div><!-- /btn-group -->
-				       </div><!-- /input-group -->
-				    </div>
-				</div>		
+						     <input type="text" class="form-control" id="ssn" name="ssn" placeholder="XXX-XX-XXXX">
+						      <div class="input-group-btn">
+						       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Full SSN Reported<span class="caret"></span></button>
+						       <ul class="dropdown-menu dropdown-menu-right">
+						         <li><a href="#"> Full SSN Reported </a></li>
+						         <li><a href="#"> Partial SSN Reported </a></li>
+						         <li><a href="#"> Don't Know </a></li>
+						         <li><a href="#"> Refused </a></li>
+						       </ul>
+						     </div><!-- /btn-group -->
+					      </div><!-- /input-group -->
+				</div>
 				
+				<div class="col-sm-3 form-group">
+					<label>Gender</label>
+						<div class="dropdown">
+							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuGender" name="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							   Gender
+							   <span class="caret"></span>
+							 </button>
+							 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							   <li><a href="#">Female</a></li>
+							   <li><a href="#">Male</a></li>
+							   <li><a href="#">Transgender Male to Female</a></li>
+							   <li><a href="#">Transgender Female to Male</a></li>
+							   <li><a href="#">Other</a></li>
+							   <li><a href="#">Don't Know</a></li>
+							   <li><a href="#">Refused</a></li>
+							 </ul>
+						</div>
+				</div>
+			</div><!--end row-->
+			
+			<div class="row">
+				<div class="col-sm-3 form-group">
+					<label>Age (Birthday Unk.)</label>
+					<input type="text" placeholder="Age" name="age" class="form-control">
+				</div>		
+				<div class="col-sm-3 form-group">
+					<label>Phone Number:</label>
+					<input type="text" class="form-control" name="phoneNum" placeholder="(XXX) XXX-XXXX">
+				</div>		
+				<div class="col-sm-3 form-group">
+					<label>Email Address:</label>
+					<input type="email" name="email" placeholder="someone@example.com" class="form-control">
+				</div>
+				<div class="col-sm-2 form-group">
+					<label>Race:</label>
+						<div class="dropdown">
+							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuRace" name="race" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							   Race
+							   <span class="caret"></span>
+							 </button>
+							 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							   <li><a href="#">American Indian/Alaskan Native</a></li>
+							   <li><a href="#">Asian</a></li>
+							   <li><a href="#">Black/African American</a></li>
+							   <li><a href="#">Native Hawiian or Other Paciific Islander</a></li>
+							   <li><a href="#">White/Caucasian</a></li>
+							   <li><a href="#">Don't Know</a></li>
+							   <li><a href="#">Refused</a></li>
+							 </ul>
+						</div>
+				</div>
+			</div><!--end row-->
+			
+			<div class="row">
+				<div class="col-sm-3 form-group">
+				<label>Disabling Condition:</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDisableCond" name ="condition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Disabling Condition
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="#">No</a></li>
+						   <li><a href="#">Yes</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
+				<div class="col-sm-3 form-group">
+					<label>Veteran Status:</label>
+					<div class="dropdown">
+						
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuVetStat" name="vetStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Veteran Status
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="#">No</a></li>
+						   <li><a href="#">Yes</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
 				<div class="row">
-					<div class="col-sm-6 form-group">
-						<label>Gender</label>
-							<div class="dropdown">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							    Gender
-							    <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    <li><a href="#">Female</a></li>
-							    <li><a href="#">Male</a></li>
-							    <li><a href="#">Transgender Male to Female</a></li>
-							    <li><a href="#">Transgender Female to Male</a></li>
-							    <li><a href="#">Other</a></li>
-							    <li><a href="#">Don't Know</a></li>
-							    <li><a href="#">Refused</a></li>
-							  </ul>
-							</div>
-					</div>		
-					<div class="col-sm-6 form-group">
-						<label>Company</label>
-						<input type="text" placeholder="Enter Company Name Here.." class="form-control">
-					</div>	
-				</div>		
+				<div class="col-sm-3 form-group">
+				<label>Prior Residence:</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPrRes" name="prior" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Prior Residence
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenuRes" style="height:150px; width:700px;overflow:hidden; overflow-y:scroll;">
+						   <li><a href="#">Emergency Shelter</a></li>
+						   <li><a href="#">Transitional Housing for Homeless Persons (including homeless youth)	</a></li>
+						   <li><a href="#">Permanent Housing for Formerly Homeless Persons (such as SHP, S+C, SRO Mod Rehab)</a></li>
+						   <li><a href="#">Psychiatric Hospital</a></li>
+						   <li><a href="#">Substance Abuse Treatment Center</a></li>
+						   <li><a href="#">Hospital</a></li>
+						   <li><a href="#">Prison</a></li>
+						   <li><a href="#">Rental by Client, No Housing Subsidy</a></li>
+						   <li><a href="#">Rental by Client, with VASH Housing Subsidy</a></li>
+						   <li><a href="#">Rental by Client, with Other (Non-Vash) Housing Subsidy</a></li>
+						   <li><a href="#">Owned by Client, No Housing Subsidy</a></li>
+						   <li><a href="#">Owned by Client, with Housing Subsidy</a></li>
+						   <li><a href="#">Staying or Living in a Family Member’s Room, Apartment, or House</a></li>
+						   <li><a href="#">Staying or Living in a Friend’s Room, Apartment, or House</a></li>
+						   <li><a href="#">Hotel/Motel Paid for Without Emergency Shelter Voucher	</a></li>
+						   <li><a href="#">Foster Care Home/Foster Care Group Home</a></li>
+						   <li><a href="#">Places Not Meant for Habitation e.g., (Vehicles, Abandoned Building, Bus/Train/Subway Station/Airport, etc)</a></li>
+						   <li><a href="#">Safe Haven</a></li>
+						   <li><a href="#">Other (Describe)</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						   
+						 </ul>
+					</div>
+				</div>
+				<div class="col-sm-3 form-group">
+					<label>Length of Stay:</label>
+					<div class="dropdown">
+						
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuStayLength" name="stayLength" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Length of Stay
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="#">One Week or Less</a></li>
+						   <li><a href="#">Less Than a Month</a></li>
+						   <li><a href="#">1-3 Months</a></li>
+						   <li><a href="#">More Than 3 Months, but Less Than a Year</a></li>
+						   <li><a href="#">More Than a Year</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						   
+						 </ul>
+					</div>
+				</div>
+			</div><!-- end row -->
+			</div><!-- end row -->
+			<div class="row">
 				
-			<div class="form-group">
-				<label>Phone Number</label>
-				<input type="text" placeholder="Enter Phone Number Here.." class="form-control">
-			</div>		
-			<div class="form-group">
-				<label>Email Address</label>
-				<input type="text" placeholder="Enter Email Address Here.." class="form-control">
-			</div>	
-			<div class="form-group">
-				<label>Website</label>
-				<input type="text" placeholder="Enter Website Name Here.." class="form-control">
+				<div class="col-sm-3 form-group">
+				<label>Housing Status:</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuHouseStat" name="houseStat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Status        
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="#">Homeless</a></li>
+						   <li><a href="#">Housed, but at-risk of losing housing	</a></li>
+						   <li><a href="#">Housed, but at imminent risk of losing housing	</a></li>
+						   <li><a href="#">Stably Housed</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
+					<div class="col-sm-6 form-group">
+					<label>Zip Code:</label>
+						<div class="input-group">
+						     <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code" maxlength="5">
+						      <div class="input-group-btn">
+						       <button type="button" class="btn btn-default dropdown-toggle" name="zipStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Full Zip Reported <span class="caret"></span></button>
+						       <ul class="dropdown-menu dropdown-menu-right">
+						         <li><a href="#">Full Zip Reported</a></li>
+						         <li><a href="#">Partial Zip Reported</a></li>
+						         <li><a href="#">Don't Know</a></li>
+						         <li><a href="#">Refused</a></li>
+						       </ul>
+						     </div><!-- /btn-group -->
+					      </div><!-- /input-group -->
+				</div>
+				<div class="col-sm-4 form-group">
+					<label>City/State (Zip Unk.):</label>
+						<div class="input-group">
+						     <input type="text" class="form-control" id="city2" name="city2" placeholder="City">
+						      <div class="input-group-btn">
+						       <button type="button" class="btn btn-default dropdown-toggle" name="state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
+						       <ul class="dropdown-menu dropdown-menu-right" style="height:150px; width:18%; overflow:hidden; overflow-y:scroll;" >
+						         <li><a href="#"> AL (Alabama) </a></li>
+						         <li><a href="#"> AK (Alaska) </a></li>
+						         <li><a href="#"> AZ (Arizona) </a></li>
+						         <li><a href="#"> AR (Arkansas) </a></li>
+						         <li><a href="#"> CA (California) </a></li>
+						         <li><a href="#"> CO (Colorado) </a></li>
+						         <li><a href="#"> CT (Conneticut) </a></li>
+						         <li><a href="#"> DE (Delaware) </a></li>
+						         <li><a href="#"> FL (Florida) </a></li>
+						         <li><a href="#"> GA (Georgia) </a></li>
+						         <li><a href="#"> HI (Hawaii) </a></li>
+						         <li><a href="#"> ID (Idaho) </a></li>
+						         <li><a href="#"> IL (Illinois) </a></li>
+						         <li><a href="#"> IN (Indiana) </a></li>
+						         <li><a href="#"> IA (Iowa) </a></li>
+						         <li><a href="#"> KS (Kansas) </a></li>
+						         <li><a href="#"> KY (Kentucky) </a></li>
+						         <li><a href="#"> LA (Louisiana) </a></li>
+						         <li><a href="#"> ME (Maine) </a></li>
+						         <li><a href="#"> MD (Maryland) </a></li>
+						         <li><a href="#"> MA (Massachusetts) </a></li>
+						         <li><a href="#"> MI (Michigan) </a></li>
+						         <li><a href="#"> MN (Minnesota) </a></li>
+						         <li><a href="#"> MS (Mississippi) </a></li>
+						         <li><a href="#"> MO (Missouri) </a></li>
+						         <li><a href="#"> MT (Montana) </a></li>
+						         <li><a href="#"> NE (Nebraska) </a></li>
+						         <li><a href="#"> NV (Nevada) </a></li>
+						         <li><a href="#"> NH (New Hampshire) </a></li>
+						         <li><a href="#"> NJ (New Jersey) </a></li>
+						         <li><a href="#"> NM (New Mexico) </a></li>
+						         <li><a href="#"> NY (New York) </a></li>
+						         <li><a href="#"> NC (North Carolina) </a></li>
+						         <li><a href="#"> ND (North Dakota) </a></li>
+						         <li><a href="#"> OH (Ohio) </a></li>
+						         <li><a href="#"> OK (Oklahoma) </a></li>
+						         <li><a href="#"> OR (Oregon) </a></li>
+						         <li><a href="#"> PA (Pennsylvania) </a></li>
+						         <li><a href="#"> RI (Rhode Island) </a></li>
+						         <li><a href="#"> SC (South Carolina) </a></li>
+						         <li><a href="#"> SD (South Dakota) </a></li>
+						         <li><a href="#"> TN (Tennessee) </a></li>
+						         <li><a href="#"> TX (Texas) </a></li>
+						         <li><a href="#"> UT (Utah) </a></li>
+						         <li><a href="#"> VT (Vermont) </a></li>
+						         <li><a href="#"> VA (Virginia) </a></li>
+						         <li><a href="#"> WA (Washington) </a></li>
+						         <li><a href="#"> WV (West Virginia) </a></li>
+						         <li><a href="#"> WI (Wisconsin) </a></li>
+						         <li><a href="#"> WY (Wyoming) </a></li>
+						         <li><a href="#"> Don't Know</a></li>
+						         <li><a href="#"> Refused</a></li>
+						       </ul>
+						     </div><!-- /btn-group -->
+					      </div><!-- /input-group -->
+				</div>
+				
+			</div><!-- end row -->
+				<div class="row col-lg-12 full">
+					<h3>Financial Resouces:</h3>
+				</div>
+			<div class="row">
+				
+				<div class="col-sm-3 form-group">
+				<label>Any income received in the past 30 days?</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuHouseIncome" name="income" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Income
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="#">Yes</a></li>
+						   <li><a href="#">No</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
 			</div>
-			<button type="button" class="btn btn-lg btn-info">Submit</button>					
-			</div>
+			
+			<div class="row">
+				
+				<div class="col-sm-3 form-group">
+				<label>Destination (At Exit)</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						   Residence
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="height:150px; width:700px;overflow:hidden; overflow-y:scroll;" >
+						   <li><a href="#">Emergency Shelter, including hotel or motel paid for with emergency shelter voucher</a></li>
+						   <li><a href="#">Transitional housing for homeless persons (including homeless youth)</a></li>
+						   <li><a href="#">Permanent supportive housing for formerly homeless persons(such as SHP, S+C, or SRO Mod Rehab)</a></li>
+						   <li><a href="#">Psychiatric hospital or other psychiatric facility</a></li>
+						   <li><a href="#">Substance abuse treatment facility or detox center</a></li>
+						   <li><a href="#">Hospital</a></li>
+						   <li><a href="#">Jail, prison, or juvenile detention facility</a></li>
+						   <li><a href="#">Rental by client, no housing subsidy</a></li>
+						   <li><a href="#">Owned by client, no housing subsidy</a></li>
+						   <li><a href="#">Staying or living with family, temporary tenure (e.g. room, apartment, or house</a></li>
+						   <li><a href="#">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
+						   <li><a href="#">Hotel or motel paid for without emergency shelter voucher</a></li>
+						   <li><a href="#">Foster care home or foster care group home</a></li>
+						   <li><a href="#">Place not meant for habitation (e.g., a vehicle, an abandoned building, bus/train/subway station/ airport or anywhere outside)</a></li>
+						   <li><a href="#">Safe Haven</a></li>
+						   <li><a href="#">Other</a></li>
+						   <li><a href="#">Rental by client, VASH subsidy</a></li>
+						   <li><a href="#">Rental by client, other (non-VASH) housing subsidy</a></li>
+						   <li><a href="#">Owned by client, with housing subsidy</a></li>
+						   <li><a href="#">Staying or living with family, permanent tenure</a></li>
+						   <li><a href="#">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
+						   <li><a href="#">Deceased</a></li>
+						   <li><a href="#">Don't Know</a></li>
+						   <li><a href="#">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
+				</div>
+				
+				
+			
+			<div class="row">
+				
+				<div class="col-sm-2">
+					<button type="button" class="btn btn-lg btn-info">Submit</button>
+				</div>
+			</div><!-- end row -->
 		</form> 
 	</div>
-	</div>
 </div>
+
+
 
     
     <!-- page 1 >
 <!--<form action method="get">-->
 <div class="container">
-<h1 class="well">Client Intake Form –Emergency Shelters</h1>
+<h1 class="well">Client Intake Form – Emergency Shelters</h1>
 <h2 class="well">PLEASE FILL OUT A SEPARATE FORM FOR EACH FAMILY MEMBER AND CLIP TOGETHER</h2>
+
 <form class="form-horizontal" action="" method="get">
-    <table>
-        <tr>
-            <td rowspan="5">
-                <h2>Enrollment Entry Date</h2>
-            	<p><input type="date" name="Edate"></p>
-        	</td>
-        	<th>
-        	    Client Bed Check-In
-        	</th>
-        </tr>
-        <tr>
-            <td>Client Bed-entry Date:</td>
-            <td><input type="text" name="CBD"></td>
-        </tr>  
-        <tr>
-            <td>Facility Client will be housed in:</td>
-            <td><input type="text" name="FCWBH"></td>
-        </tr>
-        <tr>
-            <td>Room Client will be housed in:</td>
-            <td><input type="text" name="RCWBH"></td>
-        </tr>
-        <tr>
-            <td>Bed Client will be assigned:</td>
-            <td><input type="text" name="BCWBA"></td>
-        </tr>  
-    </table>
-    
-    <table border="1">
-    <caption>Name</caption>
-        <tr>
-            <th colspan="2">
-            Current Name(first, middle, last name, suffix)    
-            </th>
-            <th>Don't Know</th>
-            <th>N/A</th>
-            <th>Refused</th>
-        </tr>
-        <tr><!--If Someone could find a way to make it where, if you select the text editor then you cant select the radio buttons and vice versa -->
-            <th>
-                First Name:
-            </th>
-            <td><input type="text" name="FirstName"/></td>
-            <td><input type="radio" name="FN"/></td>
-            <td><input type="radio" name="FN"/></td>
-            <td><input type="radio" name="FN"/></td>
-        </tr>
-        <tr>
-            <th>
-                Last Name:
-            </th>
-            <td><input type="text" name="LastName"/></td>
-             <td><input type="radio" name="LN"/></td>
-            <td><input type="radio" name="LN"/></td>
-            <td><input type="radio" name="LN"/></td>
-        </tr>
-        <tr>
-            <th>
-                Middle Name:
-            </th>
-            <td><input type="text" name="MiddleName"/></td>
-             <td><input type="radio" name="MN"/></td>
-            <td><input type="radio" name="MN"/></td>
-            <td><input type="radio" name="MN"/></td>
-        </tr>
-        <tr>
-            <th>
-                Suffix:
-            </th>
-            <td><input type="text" name="Suffix"/></td>
-             <td><input type="radio" name="SF"/></td>
-            <td><input type="radio" name="SF"/></td>
-            <td><input type="radio" name="SF"/></td>
-        </tr>
-    </table>
-    
-    <table border="1">
-    <caption>Social Security Number</caption>
-        <tr>
-            <th colspan="2">Social Security Number</th>
-            <td colspan="2"><input type="number" name="SSN"/></td>
-        </tr>
-        <tr>
-            <td>Full SSN Reported</td>
-            <td><input type="radio" name="SSN" value="1"/></td>
-            <td>Partial SSN Reported</td>
-            <td><input type="radio" name="SSN" value="2"/></td>
-        </tr>
-        <tr>
-            <td>Don’t know</td>
-            <td><input type="radio" name="SSN" value="3"/></td>
-            <td>Refused</td>
-            <td><input type="radio" name="SSN" value="4"/></td>
-        </tr>
-    </table>
-    <br/>
-    <table>
-        <tr>
-            <th>Date of Birth: </th>
-        </tr>
-        <tr>
-            <td>
-                <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--<script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker1').datetimepicker();
-                            });
-                        </script>-->
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>(If complete birth date is not know: What is your age?)</td>
-        </tr>
-        <tr>
-            <td><input type="number" name="age"/></td>
-        </tr>
-    </table>
-    
-    <table border="1">
-    <caption>Gender</caption>
-        <tr>
-            <td>Female</td>
-            <td><input type="radio" name="Gender" value="1"></td>
-        </tr>
-        <tr>
-            <td>Male</td>
-            <td><input type="radio" name="Gender" value="2"></td>
-        </tr>  
-        <tr>
-            <td>Transgender Male to Female</td>
-            <td><input type="radio" name="Gender" value="3"></td>
-        </tr>  
-        <tr>
-            <td>Transgender Female to Male</td>
-            <td><input type="radio" name="Gender" value="4"></td>
-        </tr>  
-        <tr>
-            <td>Other</td>
-            <td><input type="radio" name="Gender" value="5"></td>
-        </tr>  
-        <tr>
-            <td>Don’t Know</td>
-            <td><input type="radio" name="Gender" value="6"></td>
-        </tr>  
-        <tr>
-            <td>Refused</td>
-            <td><input type="radio" name="Gender" value="7"></td>
-        </tr>      
-    </table>
-    
-    <table border="1">
-    <caption>Ethnicity</caption>
-        <tr>
-            <td>Non-Hispanic/Non-Latino</td>
-            <td><input type="radio" name="Ethnicity" value="1"></td>
-        </tr>
-        <tr>
-            <td>Hispanic/Latino</td>
-            <td><input type="radio" name="Ethnicity" value="2"></td>
-        </tr>
-        <tr>
-            <td>Don’t know</td>
-            <td><input type="radio" name="Ethnicity" value="3"></td>
-        </tr>
-        <tr>
-            <td>Refused</td>
-            <td><input type="radio" name="Ethnicity" value="4"></td>
-        </tr>
-    </table>    
-    
-    <table border="1">
-    <caption>Race</caption>
-        <tr>
-            <td>American Indian or Alaskan Native </td>
-            <td><input type="radio" name="Race" value="1"></td>
-        </tr>
-        <tr>
-            <td>Asian</td>
-            <td><input type="radio" name="Race" value="2"></td>
-        </tr>
-        <tr>
-            <td>Black or African American</td>
-            <td><input type="radio" name="Race" value="3"></td>
-        </tr>
-        <tr>
-            <td>Native Hawaiian or Other Pacific Islander </td>
-            <td><input type="radio" name="Race" value="4"></td>
-        </tr>
-        <tr>
-            <td>White</td>
-            <td><input type="radio" name="Race" value="5"></td>
-        </tr>
-        <tr>
-            <td>Don’t know</td>
-            <td><input type="radio" name="Race" value="6"></td>
-        </tr>
-        <tr>
-            <td>Refused</td>
-            <td><input type="radio" name="Race" value="7"></td>
-        </tr>
-    </table>    
-    
-    <!--page 2-->
-    <table border="1">
-	  <caption>Disabling Condition</caption>
-		<tr>
-		  <td>No</td>
-		  <td><input type="radio" name="DC" value="1" checked></td>
-		</tr>
-	  	<tr>
-		  <td>Yes</td>
-		  <td><input type="radio" name="DC" value="2"></td>
-		</tr>
-	  	<tr>
-		  <td>Don't know</td>
-		  <td><input type="radio" name="DC" value="3"></td>
-		</tr>
-	  	<tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="DC" value="4"></td>
-		</tr>
-	</table>
-	
-	<table border="1">
-	  <caption>Veteran Status</caption>
-		<tr>
-		  <td>No</td>
-		  <td><input type="radio" name="VS" value="1" checked></td>
-		</tr>
-	  	<tr>
-		  <td>Yes</td>
-		  <td><input type="radio" name="VS" value="2"></td>
-		</tr>
-	  	<tr>
-		  <td>Don't know</td>
-		  <td><input type="radio" name="VS" value="3"></td>
-		</tr>
-	  	<tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="VS" value="4"></td>
-		</tr>
-	</table>
-	
-    <table border="1">
-	  <caption>Residence Prior to Program Entry</caption>
-		<tr>
-		  <td>Emergency shelter (including a youtd shelter, hotel, motel, campground paid witd emergency shelter voucher</td>
-		  <td><input type="radio" name="RPPE" value="1" checked></td>
-		</tr>
-	  	<tr>
-		  <td>Transitional housing for homeless persons (including homeless youtd)</td>
-		  <td><input type="radio" name="RPPE" value="2"></td>
-		</tr>
-	  	<tr>
-		  <td>Permanent housing for formerly homeless persons (such as SHP, S+C, SRO Mod Rehab)</td>
-		  <td><input type="radio" name="RPPE" value="3"></td>
-		</tr>
-	  	<tr>
-		  <td>Psychiatric hospital or otder psychiatric facility</td>
-		  <td><input type="radio" name="RPPE" value="4"></td>
-		</tr>
-		<tr>
-		  <td>Substance abuse treatment facility or detox center</td>
-		  <td><input type="radio" name="RPPE" value="5"></td>
-		</tr>
-	  	<tr>
-		  <td>Hospital (non psychiatric)</td>
-		  <td><input type="radio" name="RPPE" value="6"></td>
-		</tr>
-	  	<tr>
-		  <td>Jail, prison, juvenile detention facility</td>
-		  <td><input type="radio" name="RPPE" value="7"></td>
-		</tr>
-	  	<tr>
-		  <td>Rental by client, no housing subsidy</td>
-		  <td><input type="radio" name="RPPE" value="8"></td>
-		</tr>
-		<tr>
-		  <td>Owned by client, no housing subsidy</td>
-		  <td><input type="radio" name="RPPE" value="9"></td>
-		</tr>
-	  	<tr>
-		  <td>Staying or living in a family member’s room, apartment, or house</td>
-		  <td><input type="radio" name="RPPE" value="10"></td>
-		</tr>
-	  	<tr>
-		  <td>Staying or living in a friend’s room, apartment, or house</td>
-		  <td><input type="radio" name="RPPE" value="11"></td>
-		</tr>
-	  	<tr>
-		  <td>Hotel/motel paid for witdout emergency shelter voucher</td>
-		  <td><input type="radio" name="RPPE" value="12"></td>
-		</tr>
-		<tr>
-		  <td>Foster care home/foster care group home</td>
-		  <td><input type="radio" name="RPPE" value="13"></td>
-		</tr>
-	  	<tr>
-		  <td>Places not meant for habitation e.g., (vehicles, abandoned building, bus/train/subway station/airport, or anywhere else outside</td>
-		  <td><input type="radio" name="RPPE" value="14"></td>
-		</tr>
-	  	<tr>
-		  <td>Otder (Describe) </td>
-		  <td><input type="radio" name="RPPE" value="15"></td>
-		</tr>
-	  	<tr>
-		  <td>Safe Haven</td>
-		  <td><input type="radio" name="RPPE" value="16"></td>
-		</tr>
-		<tr>
-		  <td>Rental by client, witd VASH housing subsidy</td>
-		  <td><input type="radio" name="RPPE" value="17"></td>
-		</tr>
-	  	<tr>
-		  <td>Rental by client, witd otder (non-VASH) housing subsidy</td>
-		  <td><input type="radio" name="RPPE" value="18"></td>
-		</tr>
-	  	<tr>
-		  <td>Owned by client, witd housing subsidy</td>
-		  <td><input type="radio" name="RPPE" value="19"></td>
-		</tr>
-	  	<tr>
-		  <td>Don’t know</td>
-		  <td><input type="radio" name="RPPE" value="20"></td>
-		</tr>
-		<tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="RPPE" value="21"></td>
-		</tr>
-	</table>
-	
-	<table border="1">
-	<caption>Lengtd of Stay in Previous Place</caption>
-	    <tr>
-		  <td>One week or less</td>
-		  <td><input type="radio" name="LSPP" value="1" checked></td>
-		</tr>
-	    <tr>
-		  <td>More tdan one week, but less tdan one montd</td>
-		  <td><input type="radio" name="LSPP" value="2"></td>
-		</tr>
-	    <tr>
-		  <td>one to tdree montds</td>
-		  <td><input type="radio" name="LSPP" value="3"></td>
-		</tr>
-	    <tr>
-		  <td>More tdan one week but less tden one montd</td>
-		  <td><input type="radio" name="LSPP" value="4"></td>
-		</tr>
-	    <tr>
-		  <td>One to tdree montds</td>
-		  <td><input type="radio" name="LSPP" value="5"></td>
-		</tr>
-	    <tr>
-		  <td>More tden tdree montds, but less tden one year</td>
-		  <td><input type="radio" name="LSPP" value="6"></td>
-		</tr>
-	    <tr>
-		  <td>One year or longer</td>
-		  <td><input type="radio" name="LSPP" value="7"></td>
-		</tr>
-	    <tr>
-		  <td>Don’t know</td>
-		  <td><input type="radio" name="LSPP" value="8"></td>
-		</tr>
-	    <tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="LSPP" value="9"></td>
-		</tr>
-	</table>
-	
-	<table border="1">
-	<caption>Housing Status</caption>   
-	    <tr>
-		  <td>Literally homeless</td>
-		  <td><input type="radio" name="HS" value="1" checked></td>
-		</tr>
-	    <tr>
-		  <td>Housed and at imminent risk of losing housing</td>
-		  <td><input type="radio" name="HS" value="2"></td>
-		</tr>
-	    <tr>
-		  <td>Housed and at-risk of losing housing</td>
-		  <td><input type="radio" name="HS" value="3"></td>
-		</tr>
-	    <tr>
-		  <td>Stably housed</td>
-		  <td><input type="radio" name="HS" value="4"></td>
-		</tr>
-	    <tr>
-		  <td>Don’t know</td>
-		  <td><input type="radio" name="HS" value="5"></td>
-		</tr>
-	    <tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="HS" value="6"></td>
-		</tr>
-	</table>
-	<!--page 3-->
-	<table border="1">
-	<caption>Zip Code of Last Permanent Address (where tde client last lived for 90 days or more)</caption>     
-	    <tr>
-		  <td>Zip code</td>
-		  <td><input type="text" name="ZC"></td>
-		</tr>
-	    <tr>
-		  <td>Full or partial zip code reported</td>
-		  <td><input type="radio" name="ZC" value="1"></td>
-		</tr>
-	    <tr>
-		  <td>Don’t know</td>
-		  <td><input type="radio" name="ZC" value="2"></td>
-		</tr>
-	    <tr>
-		  <td>Refused</td>
-		  <td><input type="radio" name="ZC" value="3"></td>
-		</tr>
-	</table>
-	
-	<table border="1">
-	<caption>If zip code unknown, what is tde city and state you last lived for 90 days or more?</caption>     
-	    <tr>
-		  <td>City:</td>
-		  <td><input type="text" name="ZC" size="10"></td>
-		</tr>
-	    <tr>
-		  <td>State:</td>
-		  <td><input type="text" name="ZC" size="2"></td>
-		</tr>
-	</table>
 	
 	<table border="1">
 	    <caption>Income and Source –Program-Specific Data Element</caption>
@@ -1182,6 +1082,8 @@ http://getbootstrap.com/css/#forms
 	    </tr>
 	</table>
 	
+	
+	
 	<table border="1">
 	<caption>Services Provided</caption>
 	    <tr>
@@ -1254,105 +1156,7 @@ http://getbootstrap.com/css/#forms
 	    </tr>
 	</table>
 	
-	<table border="1">
-	<caption>Destination (At Exit)</caption>
-	    <tr>
-	        <td>Emergency Shelter, including hotel or motel paid for with emergency shelter voucher</td>
-	        <td><input type="checkbox" name="Destination" value="1" /></td>
-	    </tr>
-	    <tr>
-	        <td>Transitional housing for homeless persons (including homeless youth)</td>
-	        <td><input type="checkbox" name="Destination" value="2" /></td>
-	    </tr>
-	    <tr>
-	        <td>Permanent supportive housing for formerly homeless persons(such as SHP, S+C, or SRO Mod Rehab)</td>
-	        <td><input type="checkbox" name="Destination" value="3" /></td>
-	    </tr>
-	    <tr>
-	        <td>Psychiatric hospital or other psychiatric facility</td>
-	        <td><input type="checkbox" name="Destination" value="4" /></td>
-	    </tr>
-	    <tr>
-	        <td>Substance abuse treatment facility or detox center</td>
-	        <td><input type="checkbox" name="Destination" value="5" /></td>
-	    </tr>
-	    <tr>
-	        <td>Hospital (non-psychiatric)</td>
-	        <td><input type="checkbox" name="Destination" value="6" /></td>
-	    </tr>
-	    <tr>
-	        <td>Jail, prison, or juvenile detention facility</td>
-	        <td><input type="checkbox" name="Destination" value="7" /></td>
-	    </tr>
-	    <tr>
-	        <td>Rental by client, no housing subsidy</td>
-	        <td><input type="checkbox" name="Destination" value="8" /></td>
-	    </tr>
-	    <tr>
-	        <td>Owned by client, no housing subsidy</td>
-	        <td><input type="checkbox" name="Destination" value="9" /></td>
-	    </tr>
-	    <tr>
-	        <td>Staying or living with family, temporary tenure (e.g. room, apartment, or house)</td>
-	        <td><input type="checkbox" name="Destination" value="10" /></td>
-	    </tr>
-	    <tr>
-	        <td>Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</td>
-	        <td><input type="checkbox" name="Destination" value="11" /></td>
-	    </tr>
-	    <tr>
-	        <td>Hotel or motel paid for without emergency shelter voucher</td>
-	        <td><input type="checkbox" name="Destination" value="12" /></td>
-	    </tr>
-	    <tr>
-	        <td>Foster care home or foster care group home</td>
-	        <td><input type="checkbox" name="Destination" value="13" /></td>
-	    </tr>
-	    <tr>
-	        <td>Place not meant for habitation (e.g., a vehicle, an abandoned building, bus/train/subway station/ airport or anywhere outside)</td>
-	        <td><input type="checkbox" name="Destination" value="14" /></td>
-	    </tr>
-	    <tr>
-	        <td>Other</td>
-	        <td><input type="checkbox" name="Destination" value="15" /></td>
-	    </tr>
-	    <tr>
-	        <td>Safe Haven</td>
-	        <td><input type="checkbox" name="Destination" value="16" /></td>
-	    </tr>
-	    <tr>
-	        <td>Rental by client, VASH subsidy</td>
-	        <td><input type="checkbox" name="Destination" value="17" /></td>
-	    </tr>
-	    <tr>
-	        <td>Rental by client, other (non-VASH) housing subsidy</td>
-	        <td><input type="checkbox" name="Destination" value="18" /></td>
-	    </tr>
-	    <tr>
-	        <td>Owned by client, with housing subsidy</td>
-	        <td><input type="checkbox" name="Destination" value="19" /></td>
-	    </tr>
-	    <tr>
-	        <td>Staying or living with family, permanent tenure</td>
-	        <td><input type="checkbox" name="Destination" value="20" /></td>
-	    </tr>
-	    <tr>
-	        <td>Staying or living with friends, permanent tenure</td>
-	        <td><input type="checkbox" name="Destination" value="21" /></td>
-	    </tr>
-	    <tr>
-	        <td>Deceased</td>
-	        <td><input type="checkbox" name="Destination" value="22" /></td>
-	    </tr>
-	    <tr>
-	        <td>Don’t know</td>
-	        <td><input type="checkbox" name="Destination" value="23" /></td>
-	    </tr>
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="checkbox" name="Destination" value="24" /></td>
-	    </tr>
-	</table>
+
 	<h2>Enrollment Exit Date</h2>
 	<p><input type="date" name="date"></p>
 </form>

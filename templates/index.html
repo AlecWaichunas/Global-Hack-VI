@@ -4,30 +4,70 @@
     <div class="container">
         <div class="index_body full">
             <h1 class="project_title text-center">TBD</h1>
-            
-            {% for shelter in shelters %}
-                <a href="{% url 'shelter' shelter.id %}">
-                    <div class="shelter" >
-                        <p> {{ shelter.shelter_name }} </p>
-                        {% if shelter.service_rooms.has_room_service %}
-                            <p>{{ shelter.service_rooms.filled_rooms }} / {{ shelter.service_rooms.max_room }} </p>
-                        {% endif %}
-                        {% if shelter.service_foods.has_food_service %}
-                            <p> {{ shelter.service_foods.foodLevel }} </p>
-                        {% endif %}
-                        {% if shelter.service_housing.has_housing_service %}
-                            <p>Has Housing</p>
-                        {% endif %}
-                    </div>
-                </a>
-            
-            {% endfor %}
-            
-        </div>
-        
-     </div>
-
-    </div>
-    
-
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-sm-2 text-center">Shelter Name</th>
+                            <th class="col-sm-1 text-center">Emergency Housing</th>
+                            <th class="col-sm-1 text-center">Food Pantry</th>
+                            <th class="col-sm-1 text-center">Permanent Housing</th>
+                            <th class="col-sm-1 text-center">Physical Health Service</th>
+                            <th class="col-sm-1 text-center">Mental Health Service</th>
+                            <th class="col-sm-1 text-center">Veteran Aid Service</th>
+                        </tr>
+                    </thead>
+                </table>
+                {% for shelter in shelters %}
+                
+                    <a href="{% url 'shelter' shelter.id %}">
+                        <div>
+                        <table class="table">
+                            <tr class="shelter active" >
+                                <td class="col-sm-2"> {{ shelter.shelter_name}}</td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_rooms.has_room_service %}
+                                    Rooms: {{ shelter.service_rooms.filled_rooms }} / {{ shelter.service_rooms.max_room }}
+                                {% endif %}
+                                </td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_foods.has_food_service %}
+                                    Food: {{ shelter.service_foods.foodLevel }}
+                                {% endif %}
+                                </td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_house.has_house_service %}
+                                    <span class="glyphicon glyphicon-ok alert-success text-center center-block"></span>
+                                {% else %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
+                                {% endif %}
+                                </td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_physcial_illness.has_physical_health_service %}
+                                    <span class="glyphicon glyphicon-ok  alert-success text-center center-block"></span>
+                                {% else %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
+                                {% endif %}
+                                </td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_mental_illness.has_mental_health_service %}
+                                    <span class="glyphicon glyphicon-ok alert-success text-center center-block"></span>
+                                {% else %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
+                                {% endif %}
+                                </td>
+                                <td class="col-sm-1">
+                                {% if shelter.service_veteran_aid.has_veteran_aid %}
+                                    <span class="glyphicon glyphicon-ok alert-success text-center center-block"></span>
+                                {% else %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
+                                {% endif %}
+                                </td>
+                            </tr>
+                            </table>
+                        </div>
+                    </a>
+                 {% endfor %}
+        </div><!-- end class -->
+     </div><!-- end container -->
+     
 {% endblock %}

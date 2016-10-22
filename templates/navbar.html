@@ -10,27 +10,54 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">TBD</a>
+        <a class="navbar-brand" href="{% url 'index' %}"> {{ app_name }} </a>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="intakeform">Intake Form</a></li>
-          <li><a href="intakeform">Link</a></li>
-          <li><a href="#">Register</a></li>
-          <li><a href="#">Admin</a></li>
-            </ul>
-          </li>
+          <li class="active"><a href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="{% url 'intakeform' %}">Intake Form</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <!--<li><a href="#">Admin</a></li>-->
+          <!--  </ul>-->
+          <!--</li>-->
         </ul>
         <form class="navbar-form navbar-left">
           
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="add_shelter_header" href="{% url 'register' %}">Shelter Login</a></li>
+          <li>
+            {% if user.is_authenticated %}
+               <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown"> My Shelter
+            <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'editshelter' %}">Edit Shelter Stuff</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+            </div>
+            {% else %}
+              <div class="dropdown">
+                <button class="dropdown-toggle" type="button" data-toggle="dropdown">Login/Register Shelter<span class="caret"></span></button>
+                
+                <div class="dropdown-menu">
+                  <form action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
+                    <label for='username'>Email</label>
+                    <input type="text" name="email"/>
+                    <label for="password">Password</label>
+                    <input type="text" name="password"/>
+                    <input type="submit" value="Login">
+                  </form>
+                  <p>Don't have your shelter registered?</p>
+                  <a href="{% url 'register' %}">Register Shelter</a>
+                </div>
+              </div>
+            {% endif %}
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-</di>
+</div>

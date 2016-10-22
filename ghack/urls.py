@@ -17,15 +17,18 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 #Be sure to import any views!
-from ghack.views import hello, current_datetime, hours_ahead, contact
+
 from App import views
 
 #url(regex, viewfunction) See: http://djangobook.com/views-urlconfs/
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index_view, name='index'),
+    url(r'^intakeform/', views.intake_view, name='intakeform'),
+    url(r'^register/', views.register_view, name='register'),
+    url(r'^shelter/(?P<shelter_id>[0-9]+)/', views.shelter_view, name='shelter')
     # url(r'^hello/$', hello), #https://ghack-ethanx94.c9users.io/<regex>
-    url(r'^time/$', current_datetime), 
+    #url(r'^time/$', current_datetime), 
     # url(r'^contact/$', contact),
     
     # url(r'^meta/$', views.display_meta), 

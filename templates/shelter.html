@@ -1,0 +1,19 @@
+{% extends 'app_base.html' %}
+
+{% block content %}
+
+<ol>
+    <li style="font-weight: bold;">
+        <h5>{{ shelter.shelter_name }}</h5>
+        <span style="font-weight: normal;">
+            <p> {{ shelter.shelter_support_email }} </p>
+            <p> {{ shelter.shelter_support_tele }} </p>
+            <p> {{ shelter.shelter_address}}<br> {{ shelter.shelter_city }}, {{ shelter.shelter_state }} </p>
+            <p> {{ shelter.shelter_desc }}</p>
+        </span>
+        <div class="map">
+            <!--google maps shit here-->
+        </div>
+    </li>
+</ol>
+{% endblock %}

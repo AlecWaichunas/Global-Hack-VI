@@ -1,18 +1,17 @@
-<html>
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html lang="en">
     {% include 'header.html' %}
-    
     <body>
-        <!-- MENU BAR -->
-        <table>
-            <li> {{ app_name }} </li>
-        </table>
+        {% include 'navbar.html' %}
+      
+        {% block content%}{% endblock %}
         
-        <div class="main_body">
-            {% block content%}
-            {% endblock %}
-        </div>
+        {% include 'footer.html' %}
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </body>
-    
-    {% include 'footer.html' %}
 </html>

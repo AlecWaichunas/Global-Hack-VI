@@ -2,36 +2,50 @@
 {% block content %}
 
     <div class="container">
+        <br>
         <div class="index_body full">
-            <h1 class="project_title text-center">TBD</h1>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="col-sm-2 text-center">Shelter Name</th>
-                            <th class="col-sm-1 text-center">Emergency Housing</th>
-                            <th class="col-sm-1 text-center">Food Pantry</th>
-                            <th class="col-sm-1 text-center">Permanent Housing</th>
-                            <th class="col-sm-1 text-center">Physical Health Service</th>
-                            <th class="col-sm-1 text-center">Mental Health Service</th>
-                            <th class="col-sm-1 text-center">Veteran Aid Service</th>
+                            <th class="col-sm-2"><a href="?sort=shelter{% if not pos == 1 %}1{% endif %}" class="no-decor">Shelter Name</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=house{% if not pos == 1 %}1{% endif %}" class="no-decor">Emergency Housing</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=food{% if not pos == 1 %}1{% endif %}" class="no-decor">Food Pantry</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=phouse{% if not pos == 1 %}1{% endif %}" class="no-decor">Permanent Housing</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=health{% if not pos == 1 %}1{% endif %}" class="no-decor">Physical Health Service</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=mental{% if not pos == 1 %}1{% endif %}" class="no-decor">Mental Health Service</a></th>
+                            <th class="col-sm-1 text-center"><a href="?sort=vet{% if not pos == 1 %}1{% endif %}" class="no-decor">Veteran Aid Service</a></th>
                         </tr>
                     </thead>
                 </table>
                 {% for shelter in shelters %}
                 
-                    <a href="{% url 'shelter' shelter.id %}">
+                    <a href="{% url 'shelter' shelter.id %}" class="no-decor">
                         <div>
                         <table class="table">
                             <tr class="shelter active" >
                                 <td class="col-sm-2"> {{ shelter.shelter_name}}</td>
-                                <td class="col-sm-1">
-                                {% if shelter.service_rooms.has_room_service %}
+                                <td class="col-sm-1 text-center">
+                                {% if not shelter.service_rooms.has_room_service %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
+                                {% else %}
                                     Rooms: {{ shelter.service_rooms.filled_rooms }} / {{ shelter.service_rooms.max_room }}
                                 {% endif %}
                                 </td>
-                                <td class="col-sm-1">
+                                <td class="col-sm-1 text-center">
                                 {% if shelter.service_foods.has_food_service %}
-                                    Food: {{ shelter.service_foods.foodLevel }}
+                                    {% if shelter.service_foods.foodLevel == 0 %}
+                                        <p>No food</p>
+                                    {% elif shelter.service_foods.foodLevel == 1 %}
+                                        <p>Very Low</p>
+                                    {% elif shelter.service_foods.foodLevel == 2 %}
+                                        <p>In Need</p>
+                                    {% elif shelter.service_foods.foodLevel == 3 %}
+                                        <p>Well Stocked</p>
+                                    {% elif shelter.service_foods.foodLevel == 4 %}
+                                        <p>Abundant</p>
+                                    {% endif %}
+                                {% else %}
+                                    <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>
                                 {% endif %}
                                 </td>
                                 <td class="col-sm-1">
@@ -42,7 +56,7 @@
                                 {% endif %}
                                 </td>
                                 <td class="col-sm-1">
-                                {% if shelter.service_physcial_illness.has_physical_health_service %}
+                                {% if shelter.service_physical_illness.has_physical_health_service %}
                                     <span class="glyphicon glyphicon-ok  alert-success text-center center-block"></span>
                                 {% else %}
                                     <span class="glyphicon glyphicon-remove alert-danger text-center center-block"></span>

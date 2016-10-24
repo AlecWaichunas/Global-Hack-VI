@@ -1,0 +1,36 @@
+{% extends 'app_base.html' %}
+
+{% block content %}
+
+<div class="container">
+    
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="input-group">
+                        <div class="input-group-btn">
+            <button type="button" class="input-group-addon" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-describedby="basic-addon1">
+                Name
+            </button>
+            <div class="dropdown-menu">
+                {% for field in search_fields %}
+                    <a class="dropdown-item" href="#">{{ field }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <input type="text" id="basic-addon1" class="form-control" name="searchConstraints" id="SearchField", placeholder="Search...">
+    </div>
+        </div>
+    </div>
+
+    
+    <form method='post'>
+        <div class="input-group">
+            <input type="text" placeholder='Search'>
+            <input class="submit" value="Submit" type="submit">
+        </div>
+    </form>
+    
+</div>
+
+{% endblock %}

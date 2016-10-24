@@ -7,12 +7,13 @@ from App.forms import *
 
 from django.core.exceptions import ObjectDoesNotExist
 
-APP_NAME = "SUPER HAPPY AMAZING FUN TIME CODING"
+APP_NAME = "Cloud Shelter"
 USER_ID_NAME = 10000000
 
 # Create your views here.
 def index_view(request):
     user = request.user
+    pos = 0
     
     if request.method == 'POST':
         username_form = request.POST.get('email', '')
@@ -29,11 +30,52 @@ def index_view(request):
                     user = login_user
         else:
             logout(request)
-    
+            
+    shelters = Shelter.objects.all()
+    param = request.GET.get('sort')
+    if param is not None:
+        if param == 'shelter':
+            shelters = shelters.order_by('shelter_name')
+        elif param == 'shelter1':
+            pos = 1
+            shelters = shelters.order_by('-shelter_name')
+        elif param == 'house':
+            shelters = sorted(shelters, key=lambda s : s.available_rooms())
+        elif param == 'house1':
+            pos = 1
+            shelters = sorted(shelters, key=lambda s : s.available_rooms())
+            shelters = shelters.reverse()
+        elif param == 'phouse':
+            shelters = shelters.order_by('service_house')
+        elif param == 'phouse1':
+            pos = 1
+            shelters = shelters.order_by('-service_house')
+        elif param == 'health':
+            shelters = shelters.order_by('service_physical_illness')
+        elif param == 'health1':
+            pos = 1
+            shelters = shelters.order_by('-service_physical_illness')
+        elif param == 'mental':
+            shelters = shelters.order_by('service_mental_illness')
+        elif param == 'mental1':
+            pos = 1
+            shelters = shelters.order_by('-service_mental_illness')
+        elif param == 'vet':
+            shelters = shelters.order_by('service_veteran_aid')
+        elif param == 'vet1':
+            pos = 1
+            shelters = shelters.order_by('-service_veteran_aid')
+        elif param == 'food':
+            shelter = shelters.order_by('service_foods')
+        elif param == 'food1':
+            pos = 1
+            shelter = shelters.order_by('-service_foods')
+        
     context = { #context sends data to the html file
         'app_name': APP_NAME,
         'user': user,
-        'shelters': Shelter.objects.all()
+        'shelters': shelters,
+        'pos': pos
     }
 
     return render(request, 'index.html', context)
@@ -59,6 +101,21 @@ def register_view(request):
         post = request.POST
         
         if post:
+            new_email = post.get('email', '')
+            new_shelter_name = post.get('shelter_name', '')
+            
+            try:
+                user = User.objects.all().get(email=new_email)
+            except DoesNotExist:
+                context['error']="This email is already registered"
+                return render(request, 'register.html', context)
+                
+            try:
+                shelter = Shelter.objects.all().get(shelter_name=new_shelter_name)
+            except DoesNotExist:    
+                context['error']="This shelter is already registered"
+                return render(request, 'register.html', context)
+        
             userIDName = USER_ID_NAME
             try:
                 userIDName = userIDName + User.objects.all().latest('id').id + 1
@@ -67,7 +124,7 @@ def register_view(request):
                 
             new_user = User.objects.create_user(
                                             username=userIDName, 
-                                            email=post.get('email', ''),
+                                            email=new_email,
                                             password=post.get('password', ''))
             food_service = FoodService(has_food_service=post.get('shelter_foods',''), foodLevel=0)
             rooms_service = RoomService(has_room_service=post.get('room',''), max_room=0, filled_rooms=0)
@@ -75,6 +132,16 @@ def register_view(request):
             physical_service = PhysicalHealthService(has_physical_health_service=post.get('physical_health',''))
             mental_service = MentalHealthService(has_mental_health_service=post.get('mental_health',''))
             veteran_service = VeteranAid(has_veteran_aid=post.get('veteran_aid', ''))
+            
+            if post.get('shelter_foods', ''):
+                food_service.has_food_service = True
+                food_service.foodLevel = post.get('food_level', '')
+                
+            if post.get('room', ''):
+                rooms_service.max_room=post.get('max_rooms', '')
+                rooms_service.filled_rooms=post.get('rooms_filled', '')
+                if rooms_service.max_room == 0:
+                    rooms_service.has_room_service = False
             
             food_service.save()
             rooms_service.save()
@@ -87,7 +154,7 @@ def register_view(request):
             shelter = Shelter(
                 user = new_user,
                 userid=new_user.id,
-                shelter_name=post.get('shelter_name', ''),
+                shelter_name=new_shelter_name,
                 shelter_support_email=post.get('supp_email', ''),
                 shelter_support_tele=post.get('supp_tele', ''),
                 shelter_city=post.get('city', ''),
@@ -107,7 +174,7 @@ def register_view(request):
             if user is not None:
                 login(request, user)
             #redirect to their homepage
-            return render(request, 'index.html', context)
+            return redirect('index')
 
     
     return render(request, 'register.html', context)
@@ -134,6 +201,7 @@ def edit_shelter_view(request):
         address = post.get('address', '')
         city = post.get('city', '')
         state = post.get('state', '')
+        food = post.get('food', '')
         room = post.get('room', '')
         housing = post.get('housing', '')
         physical_health = post.get('physical_health', '')
@@ -147,17 +215,25 @@ def edit_shelter_view(request):
         shelter.shelter_support_email = supp_email
         shelter.shelter_support_tele = supp_tele
         shelter.shelter_address = address
+        shelter.service_foods.has_food_service = food
+        
         shelter.shelter_city = city
         shelter.shleter_state = state
         shelter.service_rooms.has_room_service = room
         if room:
             shelter.service_rooms.filled_rooms = post.get('rooms_filled', '')
             shelter.service_rooms.max_room = post.get('max_rooms', '')
+            if shelter.service_rooms.max_room == 0:
+                shelter.service_rooms.has_room_service = False
+        if food:
+            print(food)
+            shelter.service_foods.foodLevel = post.get('food_amount','')
         shelter.service_house.has_house_service = housing
         shelter.service_physical_illness.has_physical_health_service = physical_health
         shelter.service_mental_illness.has_mental_health_service = mental_health
         shelter.service_veteran_aid.has_veteran_aid = veteran
         
+        shelter.service_foods.save()
         shelter.service_rooms.save()
         shelter.service_physical_illness.save()
         shelter.service_mental_illness.save()
@@ -170,7 +246,7 @@ def edit_shelter_view(request):
     
 def logout_user(request):
     logout(request)
-    return index_view(request)
+    return redirect('index')
     
 
 
@@ -179,61 +255,76 @@ def intake_view(request):
         'app_name': APP_NAME,
         'user': request.user,
     }
-    '''
-    errors = [] #Do Validation eventually
     
-    if request.method == 'GET':
-        enrollment_date = request.GET['enrollment_date']
-        bed_date = request.GET['bed_date']
-        
-        firstName = request.GET['firstName']
-        middleName = request.GET['middleName']
-        lastName = request.GET['lastName']
-        suffixName = request.GET['suffixName']
-        birth_date = request.GET['birth_date']
-        
-        clientFacility = request.GET['clientFacility']
-        clientRoom = request.GET['clientRoom']
-        clientBed = request.GET['clientBed']
+    intake = Intake()
 
-        ssn = request.GET['ssn']
-        #gender = request.GET['gender']
-        
-        age = request.GET['age']
-        phoneNum = request.GET['phoneNum']
-        email = request.GET['email']
-        #race = request.GET['race']
-        
-        #condition = request.GET['condition']
-        #vetStatus = request.GET['vetStatus']
-        #prior = request.GET['prior']
-        #stayLength = request.GET['stayLength']
-        
-        #houseStat = request.GET['houseStat']
-        zip = request.GET['zip']
-        #zipStatus = request.GET['zipStatus']
-        
-        city2 = request.GET['city2']
-        #state = request.GET['state']
-        
-        #income = request.GET['income']
-    '''
     
-    
+    if request.method == 'POST':
+        post = request.POST
+        
+        intake.enrollment_date = post.get('enrollment_date', '')
+        intake.bed_date = post.get('bed_date', '')
+        
+        intake.firstName = post.get('firstName', '')
+        intake.middleName = post.get('middleName', '')
+        intake.lastName = post.get('lastName', '')
+        intake.suffixName = post.get('suffixName', '')
+        intake.birth_date = post.get('birth_date', '')
+        
+        intake.clientFacility = post.get('clientFacility', '')
+        intake.clientRoom = post.get('clientRoom', '')
+        intake.clientBed = post.get('clientBed', '')
+
+        intake.ssn = post.get('ssn', '')
+        intake.gender = post.get('gender', '') #
+        
+        intake.age = post.get('age', '')
+        intake.phoneNum = post.get('phoneNum', '')
+        intake.email = post.get('email', '')
+        intake.race = post.get('race', '') #
+        
+        intake.condition = post.get('condition', '') #
+        intake.vetStatus = post.get('vetStatus', '') #
+        intake.prior = post.get('prior', '') #
+        intake.stayLength = post.get('stayLength', '') #
+        
+        intake.houseStat = post.get('houseStat', '') #
+        intake.zip = post.get('zip', '')
+        intake.zipStatus = post.get('zipStatus', '') #
+        
+        intake.city2 = post.get('city2', '')
+        intake.state = post.get('state', '') #
+        
+        intake.income = post.get('income', '') #
+        intake.save()    
+
     
     return render(request, 'intakeform.html', context)
 
 
-'''
-    errors = []
-    if 'q' in request.GET:
-        q = request.GET['q'] #ensures non-empty
-        if not q:
-            errors.append('Enter a search term.')
-        elif len(q) > 20:
-            errors.append('Please enter at most 20 characters.')
-        else: #add in each
-            books = Book.objects.filter(title__icontains=q) #Case-insensitive
-            return render(request, 'search_results.html', {'books': books, 'query': q})
-    return render(request, 'search_form.html', {'errors': errors})
-'''
+def search_records(request):
+    user = request.user
+    if not user:
+        redirect('index')
+        
+    search_fields = [
+        "Name",
+        "SSN",
+        "Date of Birth",
+        "age",
+        "Phone Number",
+        "Email",
+        "Race",
+        "Zip code",
+        "City",
+        "State"
+    ]
+    
+    
+    context = {
+        'app_name': APP_NAME,
+        'search_fields': search_fields
+    }
+        
+    return render(request, 'search_records.html', context)
+

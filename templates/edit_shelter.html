@@ -43,8 +43,15 @@
             <label for="max_rooms">Max Roooms</label>
             <input type="number" name="max_rooms" value="{{ shelter.service_rooms.max_room }}" min="0">
         </div>
+        <br>
+        <label for="food">Food Pantry</label>
+        <input id="food_input" type="checkbox" name="food" {% if shelter.service_foods.has_food_service %} checked {% endif %}>
         
-        
+        <div id="food_foods" class="{% if not shelter.service_foods.has_food_service %} hidden {% endif %}">
+            <label for="food_amount">Food Amount</label>
+            <input type="range" name="food_amount" min="0" max="4">
+        </div>
+        <br>
         <label for="housing">Permenant Housing</label>
         <input type="checkbox" name="housing" {% if shelter.service_house.has_house_service %} checked {% endif %}>
         

@@ -2,3 +2,21 @@
 .glyphicon {
     background: transparent;
 }
+
+.no-decor{
+    color: black;
+    text-decoration: none;
+}
+
+.no-decor:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.nav-dropdown{
+    background: inherit;
+    border: none;
+    height: 100%;
+    text-align: center;
+    color: white;
+}

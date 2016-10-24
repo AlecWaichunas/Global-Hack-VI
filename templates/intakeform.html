@@ -10,13 +10,14 @@ https://ghack-ethanx94.c9users.io/intakeform/
 Fields Here:
 http://dpss.co.riverside.ca.us/files/pdf/homeless/hmis/intake-forms/hif-es.pdf
 
-http://getbootstrap.com/css/#forms
+http://getbootstrap.com/css/javascript:return false;forms
 -->
 
 <div class="container">
-    <h1 class="well">Client Intake Form</h1>
+    <h1 class="well">Client Intake Form - Emergency Shelters</h1>
+    <h2 class="well">PLEASE FILL OUT A SEPARATE FORM FOR EACH FAMILY MEMBER AND CLIP TOGETHER</h2>
 	<div class="col-lg-12 well">
-		<form action method="get">
+		<form action method="post">
 			<div class="row">
 				<div class="col-sm-6 form-group">
 					<label>Enrollment Date:</label>
@@ -47,12 +48,12 @@ http://getbootstrap.com/css/#forms
 					<label>First Name</label>
 					<div class="input-group">
 					     <input type="text" class="form-control" id="firstName" name='firstName' placeholder="First Name">
-					      <div class="input-group-btn">
+					      <div class="input-group-btn dropdown">
 					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
 					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown1">
-					         <li><a href="#" data-value="Don't Know">Don't Know</a></li>
-					         <li><a href="#" data-value="N/A">N/A</a></li>
-					         <li><a href="#" data-value="Refused">Refused</a></li>
+					         <li><a href="javascript:return false;" data-value="Don't Know">Don't Know</a></li>
+					         <li><a href="javascript:return false;" data-value="N/A">N/A</a></li>
+					         <li><a href="javascript:return false;" data-value="Refused">Refused</a></li>
 					       </ul>
 					     </div><!-- /btn-group -->
 				      </div><!-- /input-group -->
@@ -60,12 +61,12 @@ http://getbootstrap.com/css/#forms
 					<label>Middle Name</label>
 					<div class="input-group">
 					     <input type="text" class="form-control" id="middleName" name='middleName' placeholder="Middle Name">
-					      <div class="input-group-btn">
+					      <div class="input-group-btn dropdown">
 					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
 					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown2">
-					         <li><a href="#">Don't Know</a></li>
-					         <li><a href="#">N/A</a></li>
-					         <li><a href="#">Refused</a></li>
+					         <li><a href="javascript:return false;">Don't Know</a></li>
+					         <li><a href="javascript:return false;">N/A</a></li>
+					         <li><a href="javascript:return false;">Refused</a></li>
 					       </ul>
 					     </div><!-- /btn-group -->
 				      </div><!-- /input-group -->
@@ -73,39 +74,29 @@ http://getbootstrap.com/css/#forms
 					<label>Last Name</label>
 					<div class="input-group">
 					     <input type="text" class="form-control" id="lastName" name='lastName' placeholder="Last Name">
-					      <div class="input-group-btn">
+					      <div class="input-group-btn dropdown">
 					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
 					       <ul class="dropdown-menu dropdown-menu-right" id="dropdown3">
-					         <li><a href="#">Don't Know</a></li>
-					         <li><a href="#">N/A</a></li>
-					         <li><a href="#">Refused</a></li>
+					         <li><a href="javascript:return false;">Don't Know</a></li>
+					         <li><a href="javascript:return false;">N/A</a></li>
+					         <li><a href="javascript:return false;">Refused</a></li>
 					       </ul>
 					     </div><!-- /btn-group -->
 				      </div><!-- /input-group -->
 				      
 				    <label>Suffix</label>
-					<div class="input-group">
+					<div class="input-group dropdown">
 					     <input type="text" class="form-control" id="suffixName" name='suffixName' placeholder="Suffix">
-					      <div class="input-group-btn">
+					      <div class="input-group-btn dropdown">
 					       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
 					       <ul class="dropdown-menu dropdown-menu-right">
-					         <li><a href="#">Don't Know</a></li>
-					         <li><a href="#">N/A</a></li>
-					         <li><a href="#">Refused</a></li>
+					         <li><a href="javascript:return false;">Don't Know</a></li>
+					         <li><a href="javascript:return false;">N/A</a></li>
+					         <li><a href="javascript:return false;">Refused</a></li>
 					       </ul>
 					     </div><!-- /btn-group -->
 				      </div><!-- /input-group -->
-				      <div class="row col-sm-6">
-						<label>Birth Date:</label>
-                        <div class="form-group">
-                            <div class='input-group date' id='birth_date'>
-                                <input type='text' class="form-control" name='birth_date' placeholder="Birth Date"/>
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div><!--/btn group-->
-					</div><!--/input-group-->
+				      
 				</div>
 				 
 				 <div class="col-sm-6">
@@ -119,47 +110,79 @@ http://getbootstrap.com/css/#forms
             </div><!--end row-->
             
 			<div class="row">
-				<div class="col-sm-8 form-group">
+				<div class="col-sm-4 form-group">
 					<label>Social Security Number</label>
 						<div class="input-group">
 						     <input type="text" class="form-control" id="ssn" name="ssn" placeholder="XXX-XX-XXXX">
-						      <div class="input-group-btn">
-						       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Full SSN Reported<span class="caret"></span></button>
+						      <div class="input-group-btn dropdown">
+						       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						       	Full SSN Reported
+						       	<span class="caret"></span>
+						       </button>
 						       <ul class="dropdown-menu dropdown-menu-right">
-						         <li><a href="#"> Full SSN Reported </a></li>
-						         <li><a href="#"> Partial SSN Reported </a></li>
-						         <li><a href="#"> Don't Know </a></li>
-						         <li><a href="#"> Refused </a></li>
+						         <li><a href="javascript:return false;"> Full SSN Reported </a></li>
+						         <li><a href="javascript:return false;"> Partial SSN Reported </a></li>
+						         <li><a href="javascript:return false;"> Don't Know </a></li>
+						         <li><a href="javascript:return false;"> Refused </a></li>
 						       </ul>
 						     </div><!-- /btn-group -->
 					      </div><!-- /input-group -->
 				</div>
 				
-				<div class="col-sm-3 form-group">
+				<div class="col-sm-1 form-group">
 					<label>Gender</label>
 						<div class="dropdown">
-							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuGender" name="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuGender" data-toggle="dropdown" name="gender" aria-haspopup="true" aria-expanded="true">
 							   Gender
 							   <span class="caret"></span>
 							 </button>
 							 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							   <li><a href="#">Female</a></li>
-							   <li><a href="#">Male</a></li>
-							   <li><a href="#">Transgender Male to Female</a></li>
-							   <li><a href="#">Transgender Female to Male</a></li>
-							   <li><a href="#">Other</a></li>
-							   <li><a href="#">Don't Know</a></li>
-							   <li><a href="#">Refused</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='0';">Female</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='1';">Male</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='2';">Transgender Male to Female</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='3';">Transgender Female to Male</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='97';">Other</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='98';">Don't Know</a></li>
+							   <li><a href="javascript:void(0);" onclick="document.getElementById('dropdownMenuGender').value='99';">Refused</a></li>
 							 </ul>
 						</div>
 				</div>
+				
+				<div class="col-sm-2 form-group">
+					<label>Race:</label>
+						<div class="dropdown">
+							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuRace" name="race" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							 Race
+							  <span class="caret"></span></button>
+							 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							   <li><a href="javascript:return false;">American Indian/Alaskan Native</a></li>
+							   <li><a href="javascript:return false;">Asian</a></li>
+							   <li><a href="javascript:return false;">Black/African American</a></li>
+							   <li><a href="javascript:return false;">Native Hawiian or Other Pacific Islander</a></li>
+							   <li><a href="javascript:return false;">White/Caucasian</a></li>
+							   <li><a href="javascript:return false;">Don't Know</a></li>
+							   <li><a href="javascript:return false;">Refused</a></li>
+							 </ul>
+						</div>
+				</div>
+				<div class="col-sm-2">
+						<label>Birth Date:</label>
+                        <div class="form-group">
+                            <div class='input-group date' id='birth_date'>
+                                <input type='text' class="form-control" name='birth_date' placeholder="Birth Date"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div><!--/btn group-->
+					</div><!--/input-group-->
+				<div class="col-sm-2 form-group">
+					<label>Age (Birthday Unk.)</label>
+					<input type="text" placeholder="Age" name="age" class="form-control">
+				</div>	
 			</div><!--end row-->
 			
 			<div class="row">
-				<div class="col-sm-3 form-group">
-					<label>Age (Birthday Unk.)</label>
-					<input type="text" placeholder="Age" name="age" class="form-control">
-				</div>		
 				<div class="col-sm-3 form-group">
 					<label>Phone Number:</label>
 					<input type="text" class="form-control" name="phoneNum" placeholder="(XXX) XXX-XXXX">
@@ -168,24 +191,83 @@ http://getbootstrap.com/css/#forms
 					<label>Email Address:</label>
 					<input type="email" name="email" placeholder="someone@example.com" class="form-control">
 				</div>
-				<div class="col-sm-2 form-group">
-					<label>Race:</label>
-						<div class="dropdown">
-							 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuRace" name="race" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							   Race
-							   <span class="caret"></span>
-							 </button>
-							 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							   <li><a href="#">American Indian/Alaskan Native</a></li>
-							   <li><a href="#">Asian</a></li>
-							   <li><a href="#">Black/African American</a></li>
-							   <li><a href="#">Native Hawiian or Other Paciific Islander</a></li>
-							   <li><a href="#">White/Caucasian</a></li>
-							   <li><a href="#">Don't Know</a></li>
-							   <li><a href="#">Refused</a></li>
-							 </ul>
-						</div>
-				</div>
+				<div class="col-sm-3 form-group">
+					<label>Zip Code:</label>
+						<div class="input-group">
+						     <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code" maxlength="5">
+						      <div class="input-group-btn dropdown">
+						       <button type="button" class="btn btn-default dropdown-toggle" name="zipStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Full Zip Reported <span class="caret"></span></button>
+						       <ul class="dropdown-menu dropdown-menu-right">
+						         <li><a href="javascript:return false;">Full Zip Reported</a></li>
+						         <li><a href="javascript:return false;">Partial Zip Reported</a></li>
+						         <li><a href="javascript:return false;">Don't Know</a></li>
+						         <li><a href="javascript:return false;">Refused</a></li>
+						       </ul>
+						     </div><!-- /btn-group -->
+					      </div><!-- /input-group -->
+					</div>
+				<div class="col-sm-3 form-group">
+					<label>City/State (Zip Unk.):</label>
+						<div class="input-group">
+						     <input type="text" class="form-control" id="city2" name="city2" placeholder="City">
+						      <div class="input-group-btn dropdown">
+						       <button type="button" class="btn btn-default dropdown-toggle" name="state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
+						       <ul class="dropdown-menu dropdown-menu-right" style="height:150px; width:18%; overflow:hidden; overflow-y:scroll;" >
+						         <li><a href="javascript:return false;"> AL (Alabama) </a></li>
+						         <li><a href="javascript:return false;"> AK (Alaska) </a></li>
+						         <li><a href="javascript:return false;"> AZ (Arizona) </a></li>
+						         <li><a href="javascript:return false;"> AR (Arkansas) </a></li>
+						         <li><a href="javascript:return false;"> CA (California) </a></li>
+						         <li><a href="javascript:return false;"> CO (Colorado) </a></li>
+						         <li><a href="javascript:return false;"> CT (Conneticut) </a></li>
+						         <li><a href="javascript:return false;"> DE (Delaware) </a></li>
+						         <li><a href="javascript:return false;"> FL (Florida) </a></li>
+						         <li><a href="javascript:return false;"> GA (Georgia) </a></li>
+						         <li><a href="javascript:return false;"> HI (Hawaii) </a></li>
+						         <li><a href="javascript:return false;"> ID (Idaho) </a></li>
+						         <li><a href="javascript:return false;"> IL (Illinois) </a></li>
+						         <li><a href="javascript:return false;"> IN (Indiana) </a></li>
+						         <li><a href="javascript:return false;"> IA (Iowa) </a></li>
+						         <li><a href="javascript:return false;"> KS (Kansas) </a></li>
+						         <li><a href="javascript:return false;"> KY (Kentucky) </a></li>
+						         <li><a href="javascript:return false;"> LA (Louisiana) </a></li>
+						         <li><a href="javascript:return false;"> ME (Maine) </a></li>
+						         <li><a href="javascript:return false;"> MD (Maryland) </a></li>
+						         <li><a href="javascript:return false;"> MA (Massachusetts) </a></li>
+						         <li><a href="javascript:return false;"> MI (Michigan) </a></li>
+						         <li><a href="javascript:return false;"> MN (Minnesota) </a></li>
+						         <li><a href="javascript:return false;"> MS (Mississippi) </a></li>
+						         <li><a href="javascript:return false;"> MO (Missouri) </a></li>
+						         <li><a href="javascript:return false;"> MT (Montana) </a></li>
+						         <li><a href="javascript:return false;"> NE (Nebraska) </a></li>
+						         <li><a href="javascript:return false;"> NV (Nevada) </a></li>
+						         <li><a href="javascript:return false;"> NH (New Hampshire) </a></li>
+						         <li><a href="javascript:return false;"> NJ (New Jersey) </a></li>
+						         <li><a href="javascript:return false;"> NM (New Mexico) </a></li>
+						         <li><a href="javascript:return false;"> NY (New York) </a></li>
+						         <li><a href="javascript:return false;"> NC (North Carolina) </a></li>
+						         <li><a href="javascript:return false;"> ND (North Dakota) </a></li>
+						         <li><a href="javascript:return false;"> OH (Ohio) </a></li>
+						         <li><a href="javascript:return false;"> OK (Oklahoma) </a></li>
+						         <li><a href="javascript:return false;"> OR (Oregon) </a></li>
+						         <li><a href="javascript:return false;"> PA (Pennsylvania) </a></li>
+						         <li><a href="javascript:return false;"> RI (Rhode Island) </a></li>
+						         <li><a href="javascript:return false;"> SC (South Carolina) </a></li>
+						         <li><a href="javascript:return false;"> SD (South Dakota) </a></li>
+						         <li><a href="javascript:return false;"> TN (Tennessee) </a></li>
+						         <li><a href="javascript:return false;"> TX (Texas) </a></li>
+						         <li><a href="javascript:return false;"> UT (Utah) </a></li>
+						         <li><a href="javascript:return false;"> VT (Vermont) </a></li>
+						         <li><a href="javascript:return false;"> VA (Virginia) </a></li>
+						         <li><a href="javascript:return false;"> WA (Washington) </a></li>
+						         <li><a href="javascript:return false;"> WV (West Virginia) </a></li>
+						         <li><a href="javascript:return false;"> WI (Wisconsin) </a></li>
+						         <li><a href="javascript:return false;"> WY (Wyoming) </a></li>
+						         <li><a href="javascript:return false;"> Don't Know</a></li>
+						         <li><a href="javascript:return false;"> Refused</a></li>
+						       </ul>
+						     </div><!-- /btn-group -->
+					      </div><!-- /input-group -->
 			</div><!--end row-->
 			
 			<div class="row">
@@ -197,30 +279,28 @@ http://getbootstrap.com/css/#forms
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						   <li><a href="#">No</a></li>
-						   <li><a href="#">Yes</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">No</a></li>
+						   <li><a href="javascript:return false;">Yes</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						 </ul>
 					</div>
 				</div>
 				<div class="col-sm-3 form-group">
 					<label>Veteran Status:</label>
 					<div class="dropdown">
-						
 						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuVetStat" name="vetStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						   Veteran Status
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						   <li><a href="#">No</a></li>
-						   <li><a href="#">Yes</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">No</a></li>
+						   <li><a href="javascript:return false;">Yes</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						 </ul>
 					</div>
 				</div>
-				<div class="row">
 				<div class="col-sm-3 form-group">
 				<label>Prior Residence:</label>
 					<div class="dropdown">
@@ -229,31 +309,31 @@ http://getbootstrap.com/css/#forms
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenuRes" style="height:150px; width:700px;overflow:hidden; overflow-y:scroll;">
-						   <li><a href="#">Emergency Shelter</a></li>
-						   <li><a href="#">Transitional Housing for Homeless Persons (including homeless youth)	</a></li>
-						   <li><a href="#">Permanent Housing for Formerly Homeless Persons (such as SHP, S+C, SRO Mod Rehab)</a></li>
-						   <li><a href="#">Psychiatric Hospital</a></li>
-						   <li><a href="#">Substance Abuse Treatment Center</a></li>
-						   <li><a href="#">Hospital</a></li>
-						   <li><a href="#">Prison</a></li>
-						   <li><a href="#">Rental by Client, No Housing Subsidy</a></li>
-						   <li><a href="#">Rental by Client, with VASH Housing Subsidy</a></li>
-						   <li><a href="#">Rental by Client, with Other (Non-Vash) Housing Subsidy</a></li>
-						   <li><a href="#">Owned by Client, No Housing Subsidy</a></li>
-						   <li><a href="#">Owned by Client, with Housing Subsidy</a></li>
-						   <li><a href="#">Staying or Living in a Family Member’s Room, Apartment, or House</a></li>
-						   <li><a href="#">Staying or Living in a Friend’s Room, Apartment, or House</a></li>
-						   <li><a href="#">Hotel/Motel Paid for Without Emergency Shelter Voucher	</a></li>
-						   <li><a href="#">Foster Care Home/Foster Care Group Home</a></li>
-						   <li><a href="#">Places Not Meant for Habitation e.g., (Vehicles, Abandoned Building, Bus/Train/Subway Station/Airport, etc)</a></li>
-						   <li><a href="#">Safe Haven</a></li>
-						   <li><a href="#">Other (Describe)</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">Emergency Shelter</a></li>
+						   <li><a href="javascript:return false;">Transitional Housing for Homeless Persons (including homeless youth)	</a></li>
+						   <li><a href="javascript:return false;">Permanent Housing for Formerly Homeless Persons (such as SHP, S+C, SRO Mod Rehab)</a></li>
+						   <li><a href="javascript:return false;">Psychiatric Hospital</a></li>
+						   <li><a href="javascript:return false;">Substance Abuse Treatment Center</a></li>
+						   <li><a href="javascript:return false;">Hospital</a></li>
+						   <li><a href="javascript:return false;">Prison</a></li>
+						   <li><a href="javascript:return false;">Rental by Client, No Housing Subsidy</a></li>
+						   <li><a href="javascript:return false;">Rental by Client, with VASH Housing Subsidy</a></li>
+						   <li><a href="javascript:return false;">Rental by Client, with Other (Non-Vash) Housing Subsidy</a></li>
+						   <li><a href="javascript:return false;">Owned by Client, No Housing Subsidy</a></li>
+						   <li><a href="javascript:return false;">Owned by Client, with Housing Subsidy</a></li>
+						   <li><a href="javascript:return false;">Staying or Living in a Family Member’s Room, Apartment, or House</a></li>
+						   <li><a href="javascript:return false;">Staying or Living in a Friend’s Room, Apartment, or House</a></li>
+						   <li><a href="javascript:return false;">Hotel/Motel Paid for Without Emergency Shelter Voucher	</a></li>
+						   <li><a href="javascript:return false;">Foster Care Home/Foster Care Group Home</a></li>
+						   <li><a href="javascript:return false;">Places Not Meant for Habitation e.g., (Vehicles, Abandoned Building, Bus/Train/Subway Station/Airport, etc)</a></li>
+						   <li><a href="javascript:return false;">Safe Haven</a></li>
+						   <li><a href="javascript:return false;">Other (Describe)</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						   
 						 </ul>
 					</div>
-				</div>
+				</div><!-- end row -->
 				<div class="col-sm-3 form-group">
 					<label>Length of Stay:</label>
 					<div class="dropdown">
@@ -263,22 +343,21 @@ http://getbootstrap.com/css/#forms
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						   <li><a href="#">One Week or Less</a></li>
-						   <li><a href="#">Less Than a Month</a></li>
-						   <li><a href="#">1-3 Months</a></li>
-						   <li><a href="#">More Than 3 Months, but Less Than a Year</a></li>
-						   <li><a href="#">More Than a Year</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">One Week or Less</a></li>
+						   <li><a href="javascript:return false;">Less Than a Month</a></li>
+						   <li><a href="javascript:return false;">1-3 Months</a></li>
+						   <li><a href="javascript:return false;">More Than 3 Months, but Less Than a Year</a></li>
+						   <li><a href="javascript:return false;">More Than a Year</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						   
 						 </ul>
 					</div>
 				</div>
 			</div><!-- end row -->
-			</div><!-- end row -->
+			
 			<div class="row">
-				
-				<div class="col-sm-3 form-group">
+				<div class="col-sm-4 form-group">
 				<label>Housing Status:</label>
 					<div class="dropdown">
 						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuHouseStat" name="houseStat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -286,162 +365,626 @@ http://getbootstrap.com/css/#forms
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						   <li><a href="#">Homeless</a></li>
-						   <li><a href="#">Housed, but at-risk of losing housing	</a></li>
-						   <li><a href="#">Housed, but at imminent risk of losing housing	</a></li>
-						   <li><a href="#">Stably Housed</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">Homeless</a></li>
+						   <li><a href="javascript:return false;">Housed, but at-risk of losing housing	</a></li>
+						   <li><a href="javascript:return false;">Housed, but at imminent risk of losing housing	</a></li>
+						   <li><a href="javascript:return false;">Stably Housed</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						 </ul>
 					</div>
 				</div>
-					<div class="col-sm-6 form-group">
-					<label>Zip Code:</label>
-						<div class="input-group">
-						     <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code" maxlength="5">
-						      <div class="input-group-btn">
-						       <button type="button" class="btn btn-default dropdown-toggle" name="zipStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Full Zip Reported <span class="caret"></span></button>
-						       <ul class="dropdown-menu dropdown-menu-right">
-						         <li><a href="#">Full Zip Reported</a></li>
-						         <li><a href="#">Partial Zip Reported</a></li>
-						         <li><a href="#">Don't Know</a></li>
-						         <li><a href="#">Refused</a></li>
-						       </ul>
-						     </div><!-- /btn-group -->
-					      </div><!-- /input-group -->
-				</div>
-				<div class="col-sm-4 form-group">
-					<label>City/State (Zip Unk.):</label>
-						<div class="input-group">
-						     <input type="text" class="form-control" id="city2" name="city2" placeholder="City">
-						      <div class="input-group-btn">
-						       <button type="button" class="btn btn-default dropdown-toggle" name="state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State <span class="caret"></span></button>
-						       <ul class="dropdown-menu dropdown-menu-right" style="height:150px; width:18%; overflow:hidden; overflow-y:scroll;" >
-						         <li><a href="#"> AL (Alabama) </a></li>
-						         <li><a href="#"> AK (Alaska) </a></li>
-						         <li><a href="#"> AZ (Arizona) </a></li>
-						         <li><a href="#"> AR (Arkansas) </a></li>
-						         <li><a href="#"> CA (California) </a></li>
-						         <li><a href="#"> CO (Colorado) </a></li>
-						         <li><a href="#"> CT (Conneticut) </a></li>
-						         <li><a href="#"> DE (Delaware) </a></li>
-						         <li><a href="#"> FL (Florida) </a></li>
-						         <li><a href="#"> GA (Georgia) </a></li>
-						         <li><a href="#"> HI (Hawaii) </a></li>
-						         <li><a href="#"> ID (Idaho) </a></li>
-						         <li><a href="#"> IL (Illinois) </a></li>
-						         <li><a href="#"> IN (Indiana) </a></li>
-						         <li><a href="#"> IA (Iowa) </a></li>
-						         <li><a href="#"> KS (Kansas) </a></li>
-						         <li><a href="#"> KY (Kentucky) </a></li>
-						         <li><a href="#"> LA (Louisiana) </a></li>
-						         <li><a href="#"> ME (Maine) </a></li>
-						         <li><a href="#"> MD (Maryland) </a></li>
-						         <li><a href="#"> MA (Massachusetts) </a></li>
-						         <li><a href="#"> MI (Michigan) </a></li>
-						         <li><a href="#"> MN (Minnesota) </a></li>
-						         <li><a href="#"> MS (Mississippi) </a></li>
-						         <li><a href="#"> MO (Missouri) </a></li>
-						         <li><a href="#"> MT (Montana) </a></li>
-						         <li><a href="#"> NE (Nebraska) </a></li>
-						         <li><a href="#"> NV (Nevada) </a></li>
-						         <li><a href="#"> NH (New Hampshire) </a></li>
-						         <li><a href="#"> NJ (New Jersey) </a></li>
-						         <li><a href="#"> NM (New Mexico) </a></li>
-						         <li><a href="#"> NY (New York) </a></li>
-						         <li><a href="#"> NC (North Carolina) </a></li>
-						         <li><a href="#"> ND (North Dakota) </a></li>
-						         <li><a href="#"> OH (Ohio) </a></li>
-						         <li><a href="#"> OK (Oklahoma) </a></li>
-						         <li><a href="#"> OR (Oregon) </a></li>
-						         <li><a href="#"> PA (Pennsylvania) </a></li>
-						         <li><a href="#"> RI (Rhode Island) </a></li>
-						         <li><a href="#"> SC (South Carolina) </a></li>
-						         <li><a href="#"> SD (South Dakota) </a></li>
-						         <li><a href="#"> TN (Tennessee) </a></li>
-						         <li><a href="#"> TX (Texas) </a></li>
-						         <li><a href="#"> UT (Utah) </a></li>
-						         <li><a href="#"> VT (Vermont) </a></li>
-						         <li><a href="#"> VA (Virginia) </a></li>
-						         <li><a href="#"> WA (Washington) </a></li>
-						         <li><a href="#"> WV (West Virginia) </a></li>
-						         <li><a href="#"> WI (Wisconsin) </a></li>
-						         <li><a href="#"> WY (Wyoming) </a></li>
-						         <li><a href="#"> Don't Know</a></li>
-						         <li><a href="#"> Refused</a></li>
-						       </ul>
-						     </div><!-- /btn-group -->
-					      </div><!-- /input-group -->
-				</div>
+					
+			</div><!-- end row-->
 				
 			</div><!-- end row -->
 				<div class="row col-lg-12 full">
 					<h3>Financial Resouces:</h3>
 				</div>
+				
+				<br>
+				
 			<div class="row">
 				
 				<div class="col-sm-3 form-group">
 				<label>Any income received in the past 30 days?</label>
 					<div class="dropdown">
 						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuHouseIncome" name="income" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						   Income
+						 	 &nbsp
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						   <li><a href="#">Yes</a></li>
-						   <li><a href="#">No</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">Yes</a></li>
+						   <li><a href="javascript:return false;">No</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						 </ul>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row">
+			
+			
+				<div class ="row">
+				<table class="table">
+                    <thead>
+                    	<th class="col-sm-2 text-center">Sources of Income</th>
+                    	<th class="col-sm-2 text-center" colspan="2">Receiveing Income </th>
+                   
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <th class="col-sm-2">Earned Income</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="R2"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R2"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Unemployement Insurance</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="R3"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R3"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Supplement Security Insurance(SSI)</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="R4"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R4"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Social Security Disability Income (SSDI)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="R5"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R5"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Veteran’s Disability Payment</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R6"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R6"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Private Disability Insurance</th>
+             				  <th class="col-sm-1 text-center"><input type="radio" name="R7"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R7"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Workers Compensation</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="R8"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R8"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Temporary Assistance for Needy Families (TANF)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="R9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R9"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">General Assistance (GA)</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R10"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R10"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Retirement income from Social Security</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R11"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R11"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Veteran’s Pension</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R12"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R12"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Pension from former job</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R13"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R13"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Child Support</th>
+                           <th class="col-sm-1 text-center"><input type="radio" name="R14"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R14"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Alimony or other spousal support</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R15"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R15"/> No</th>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-2">Other source</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R16"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="R16"/> No</th>
+                        </tr>
+                      <tr>
+                            <th class="col-sm-2">Total Monthly Income:</th>
+                            <th class="col-sm-1 text-center"></th>
+                            <th class="col-sm-1 text-center"></th>
+                            <th class="col-sm-1 text-center"><input type="text" name="total" placeholder="Total Monthly Income"/></th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div>
+				
+				<br>
+				
+				<div class="row">
 				
 				<div class="col-sm-3 form-group">
-				<label>Destination (At Exit)</label>
+				<label>Non-Cash benefit received from any source in past 30 days?</label>
+					<div class="dropdown">
+						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPD" name="PD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    &nbsp
+						   <span class="caret"></span>
+						 </button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						   <li><a href="javascript:return false;">Yes</a></li>
+						   <li><a href="javascript:return false;">No</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
+						 </ul>
+					</div>
+				</div>
+			</div>
+				<div class ="row">
+				<table class="table">
+                    <thead>
+                    	<th class="col-sm-2 text-center">Sources of Non-Cash Benefits</th>
+                    	<th class="col-sm-2 text-center" colspan="2">Receiveing Benefit</th>
+                    	
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <th class="col-sm-2">Supplemental Nutrition Assistance Program (SNAP)(Previously known as Food Stamps</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S1"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S1"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">MEDICAID health insurance program (or use local name)</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="S2"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S2"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">MEDICARE health insurance program (or use local name)</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="S3"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S3"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">State Children’s Health Insurance Program (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S4"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S4"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Special Supplemental Nutrition Program for Women,Infants, and Children (WIC)</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S5"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S5"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Veteran’s Administration (VA) Medical Services</th>
+             				  <th class="col-sm-1 text-center"><input type="radio" name="S6"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S6"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">TANF Child Care services (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S7"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S7"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">TANF transportation services (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S8"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S8"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Other TANF-funded services (or use local name)</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Section 8, public housing, or other rental assistance</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> No</th>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-2">Other source</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S14"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S14"/> No</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div>
+			<div class ="row">
+				<table class="table">
+                    <thead>
+                    	<th class="col-sm-2 text-center">Sources of Non-Cash Benefits</th>
+                    	<th class="col-sm-2 text-center" colspan="2">Receiveing Benefit</th>
+                    	
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <th class="col-sm-2">Supplemental Nutrition Assistance Program (SNAP)(Previously known as Food Stamps</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S1"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S1"/> No</th>
+                            
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">MEDICAID health insurance program (or use local name)</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="S2"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S2"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">MEDICARE health insurance program (or use local name)</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="S3"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S3"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">State Children’s Health Insurance Program (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S4"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S4"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Special Supplemental Nutrition Program for Women,Infants, and Children (WIC)</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S5"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S5"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">Veteran’s Administration (VA) Medical Services</th>
+             				  <th class="col-sm-1 text-center"><input type="radio" name="S6"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S6"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">TANF Child Care services (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S7"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S7"/> No</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">TANF transportation services (or use local name)</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="S8"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S8"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Other TANF-funded services (or use local name)</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> No</th>
+                        </tr>
+                          <tr>
+                            <th class="col-sm-2">Section 8, public housing, or other rental assistance</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S9"/> No</th>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-2">Other source</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S14"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="S14"/> No</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div>
+				<br>
+		
+				<h3><u>Medical/Domestic Violence:</u></h3>
+			<div class ="row">
+				<table class="table">
+                 
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Physical Disability:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T1"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T1"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T1"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T1"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T2"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T2"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T2"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T2"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Developmental Disability:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T3"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T3"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T3"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T3"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T4"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T4"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T4"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T4"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Chronic Health Condition:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T5"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T5"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T5"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T5"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T6"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T6"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T6"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T6"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">HIV/AIDS:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T7"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T7"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T7"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T7"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T8"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T8"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T8"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T8"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				
+				
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Mental Health Problems:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T9"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T9"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T9"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T9"/> Refused</th>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-2">(If client has a mental health problem) Expected to be of long-continued and indefinite duration and substantially impairs ability to live independently?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T10"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T10"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T10"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T10"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If client has a mental health problem) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T11"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T11"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T11"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T11"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+					<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Substance Abuse Problems:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T12"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T12"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T12"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T12"/> Refused</th>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-2">(If client has a mental health problem) Expected to be of long-continued and indefinite duration and substantially impairs ability to live independently?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T13"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T13"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T13"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T13"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If client has a mental health problem) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
+                              <th class="col-sm-1 text-center"><input type="radio" name="T14"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T14"/> No</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="T14"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="T14"/> Refused</th>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        <tr>
+                            	<th class="col-sm-2">Domestic Violence Victim/Survivor:</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="D1"/> Yes</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="D1"/> No</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="D1"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="D1"/> Refused</th>
+                        </tr>
+                         <tr>
+                            <th class="col-sm-2">(If yes) When experience occurred?</th>
+                             <th class="col-sm-1 text-center"><input type="date" name="D3"/>Domestic Violence Occurrence</th>
+                             <th class="col-sm-1 text-center"><input type="radio" name="D3"/> Don't Know</th>
+                            <th class="col-sm-1 text-center"><input type="radio" name="D3"/> Refused</th>
+                           
+                        </tr>
+                       
+                    </tbody>
+                </table>
+				</div> 
+			
+				<br>
+				
+				<h3><u>Services Needed:</u></h3>
+				<div class ="row">
+				<table class="table">
+                   
+                    <tbody>
+                      
+                        	<tr>
+                            	 <th class="col-sm-1">Outreach &nbsp<input type="checkbox" name="C1"/> </th>
+                             </tr>
+                             
+                             <tr>
+                           		 <th class="col-sm-1">Case Management &nbsp<input type="checkbox" name="C2"/> </th>
+                            </tr>
+                            
+                           	 <tr>
+                            	<th class="col-sm-1">Life Skills (Outside of Case Management) &nbsp<input type="checkbox" name="C3"/> </th>
+                            </tr>
+                           
+                          	 <tr>
+                           		 <th class="col-sm-1">Alcohol or drug abuse services &nbsp<input type="checkbox" name="C4"/> </th>
+                       	   	</tr>
+                       	   
+                       	 	 <tr>
+                            	<th class="col-sm-1">Mental health services &nbsp<input type="checkbox" name="C5"/></th>
+                            </tr>
+                            
+                            <tr>
+                            	 <th class="col-sm-1">HIV / AIDS–related services &nbsp<input type="checkbox" name="C6"/></th>
+                            </tr>
+                            
+                            	<tr>
+                            	 <th class="col-sm-1">Other health care services &nbsp<input type="checkbox" name="C7"/> </th>
+                             </tr>
+                             
+                             <tr>
+                           		 <th class="col-sm-1">Education &nbsp<input type="checkbox" name="C8"/> </th>
+                            </tr>
+                            
+                           	 <tr>
+                            	<th class="col-sm-1">Housing placement (Outside of Case Management) &nbsp<input type="checkbox" name="C9"/> </th>
+                            </tr>
+                           
+                          	 <tr>
+                           		 <th class="col-sm-1">Employment assistance &nbsp<input type="checkbox" name="C10"/> </th>
+                       	   	</tr>
+                       	   
+                       	 	 <tr>
+                            	<th class="col-sm-1">Child care &nbsp<input type="checkbox" name="C11"/></th>
+                            </tr>
+                            
+                            <tr>
+                            	 <th class="col-sm-1">Transportation &nbsp<input type="checkbox" name="C12"/></th>
+                            </tr>
+                           
+                            <tr>
+                           		 <th class="col-sm-1">Legal &nbsp<input type="checkbox" name="C13"/> </th>
+                            </tr>
+                            
+                           	 <tr>
+                            	<th class="col-sm-1">Deceased &nbsp<input type="checkbox" name="C14"/> </th>
+                            </tr>
+                           
+                          	 <tr>
+                           		 <th class="col-sm-1">Other (Describe) &nbsp<input type="checkbox" name="C15"/> </th>
+                       	   	</tr>
+                       	   
+                       	 	 <tr>
+                            	<th class="col-sm-1">Don’t know &nbsp<input type="checkbox" name="C16"/></th>
+                            </tr>
+                            
+                            <tr>
+                            	 <th class="col-sm-1">Refused &nbsp<input type="checkbox" name="C17"/></th>
+                            </tr>
+                       
+                       
+                    </tbody>
+                </table>
+				</div> 
+				
+				<br>
+				<br>
+				
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<label>Enrollment Exit Date:</label>
+                        <div class="form-group">
+                            <div class='input-group date' id='enrollment_exit_date'>
+                                <input type='text' class="form-control" name='enrollment_exit_date' placeholder="Enrollment Exit Date"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+				</div>	
+				
+				
+				<div class="col-sm-3 form-group">
+				<label>Destination (At Exit): </label>
 					<div class="dropdown">
 						 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						   Residence
 						   <span class="caret"></span>
 						 </button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="height:150px; width:700px;overflow:hidden; overflow-y:scroll;" >
-						   <li><a href="#">Emergency Shelter, including hotel or motel paid for with emergency shelter voucher</a></li>
-						   <li><a href="#">Transitional housing for homeless persons (including homeless youth)</a></li>
-						   <li><a href="#">Permanent supportive housing for formerly homeless persons(such as SHP, S+C, or SRO Mod Rehab)</a></li>
-						   <li><a href="#">Psychiatric hospital or other psychiatric facility</a></li>
-						   <li><a href="#">Substance abuse treatment facility or detox center</a></li>
-						   <li><a href="#">Hospital</a></li>
-						   <li><a href="#">Jail, prison, or juvenile detention facility</a></li>
-						   <li><a href="#">Rental by client, no housing subsidy</a></li>
-						   <li><a href="#">Owned by client, no housing subsidy</a></li>
-						   <li><a href="#">Staying or living with family, temporary tenure (e.g. room, apartment, or house</a></li>
-						   <li><a href="#">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
-						   <li><a href="#">Hotel or motel paid for without emergency shelter voucher</a></li>
-						   <li><a href="#">Foster care home or foster care group home</a></li>
-						   <li><a href="#">Place not meant for habitation (e.g., a vehicle, an abandoned building, bus/train/subway station/ airport or anywhere outside)</a></li>
-						   <li><a href="#">Safe Haven</a></li>
-						   <li><a href="#">Other</a></li>
-						   <li><a href="#">Rental by client, VASH subsidy</a></li>
-						   <li><a href="#">Rental by client, other (non-VASH) housing subsidy</a></li>
-						   <li><a href="#">Owned by client, with housing subsidy</a></li>
-						   <li><a href="#">Staying or living with family, permanent tenure</a></li>
-						   <li><a href="#">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
-						   <li><a href="#">Deceased</a></li>
-						   <li><a href="#">Don't Know</a></li>
-						   <li><a href="#">Refused</a></li>
+						   <li><a href="javascript:return false;">Emergency Shelter, including hotel or motel paid for with emergency shelter voucher</a></li>
+						   <li><a href="javascript:return false;">Transitional housing for homeless persons (including homeless youth)</a></li>
+						   <li><a href="javascript:return false;">Permanent supportive housing for formerly homeless persons(such as SHP, S+C, or SRO Mod Rehab)</a></li>
+						   <li><a href="javascript:return false;">Psychiatric hospital or other psychiatric facility</a></li>
+						   <li><a href="javascript:return false;">Substance abuse treatment facility or detox center</a></li>
+						   <li><a href="javascript:return false;">Hospital</a></li>
+						   <li><a href="javascript:return false;">Jail, prison, or juvenile detention facility</a></li>
+						   <li><a href="javascript:return false;">Rental by client, no housing subsidy</a></li>
+						   <li><a href="javascript:return false;">Owned by client, no housing subsidy</a></li>
+						   <li><a href="javascript:return false;">Staying or living with family, temporary tenure (e.g. room, apartment, or house</a></li>
+						   <li><a href="javascript:return false;">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
+						   <li><a href="javascript:return false;">Hotel or motel paid for without emergency shelter voucher</a></li>
+						   <li><a href="javascript:return false;">Foster care home or foster care group home</a></li>
+						   <li><a href="javascript:return false;">Place not meant for habitation (e.g., a vehicle, an abandoned building, bus/train/subway station/ airport or anywhere outside)</a></li>
+						   <li><a href="javascript:return false;">Safe Haven</a></li>
+						   <li><a href="javascript:return false;">Other</a></li>
+						   <li><a href="javascript:return false;">Rental by client, VASH subsidy</a></li>
+						   <li><a href="javascript:return false;">Rental by client, other (non-VASH) housing subsidy</a></li>
+						   <li><a href="javascript:return false;">Owned by client, with housing subsidy</a></li>
+						   <li><a href="javascript:return false;">Staying or living with family, permanent tenure</a></li>
+						   <li><a href="javascript:return false;">Staying or living with friends, temporary tenure (e.g. room, apartment, or house)</a></li>
+						   <li><a href="javascript:return false;">Deceased</a></li>
+						   <li><a href="javascript:return false;">Don't Know</a></li>
+						   <li><a href="javascript:return false;">Refused</a></li>
 						 </ul>
 					</div>
 				</div>
-				</div>
 				
-				
+			
 			
 			<div class="row">
 				
 				<div class="col-sm-2">
-					<button type="button" class="btn btn-lg btn-info">Submit</button>
+					<button type="submit" class="btn btn-lg btn-info">Submit</button>
+					{% csrf_token %}
 				</div>
 			</div><!-- end row -->
 		</form> 
@@ -451,714 +994,5 @@ http://getbootstrap.com/css/#forms
 
 
     
-    <!-- page 1 >
-<!--<form action method="get">-->
-<div class="container">
-<h1 class="well">Client Intake Form – Emergency Shelters</h1>
-<h2 class="well">PLEASE FILL OUT A SEPARATE FORM FOR EACH FAMILY MEMBER AND CLIP TOGETHER</h2>
-
-<form class="form-horizontal" action="" method="get">
-	
-	<table border="1">
-	    <caption>Income and Source –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Financial Resources</th>
-	        <th rowspan="4">Income received from any source in the past 30 days?</th>
-	        <td colspan="2">No</td>
-	        <td><input type="radio" name="FR" value="1"></td>
-	    </tr> 
-	    <tr>
-	        <td colspan="2">Yes</td>
-	        <td><input type="radio" name="FR" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td colspan="2">Don't know</td>
-	        <td><input type="radio" name="FR" value="3"></td>
-	    </tr>
-	    <tr>
-	        <td colspan="2">Refused</td>
-	        <td><input type="radio" name="FR" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th>Source and Amount of Income</th>
-	        <th>Source of Income</th>
-	        <th colspan="2">Receiving Income Source</th>
-	        <th>Amount From Source</th>
-	    </tr>
-	    <tr>
-	        <td rowspan="30"></td>
-	        <td rowspan="2">Earned Income</td>
-	        <td>No</td>
-	        <td><input type="radio" name="EI" value="1"></td>
-	        <td rowspan="2"><input type="text" name="EI"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="EI" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Unemployment Insurance</td>
-	        <td>No</td>
-	        <td><input type="radio" name="UI" value="1"></td>
-	        <td rowspan="2"><input type="text" name="UI"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="UI" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Supplement Security Income (SSI)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="SSI" value="1"></td>
-	        <td rowspan="2"><input type="text" name="SSI"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="SSI" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Social Security Disability Income (SSDI)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="SSDI" value="1"></td>
-	        <td rowspan="2"><input type="text" name="SSDI"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="SSDI" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Veteran’s Disability Payment</td>
-	        <td>No</td>
-	        <td><input type="radio" name="VDP" value="1"></td>
-	        <td rowspan="2"><input type="text" name="VDP"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="VDP" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Private Disability Insurance</td>
-	        <td>No</td>
-	        <td><input type="radio" name="PDI" value="1"></td>
-	        <td rowspan="2"><input type="text" name="PDI"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="PDI" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Workers Compensation</td>
-	        <td>No</td>
-	        <td><input type="radio" name="WC" value="1"></td>
-	        <td rowspan="2"><input type="text" name="WC"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="WC" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Temporary Assistance for Needy Families (TANF)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="TANF" value="1"></td>
-	        <td rowspan="2"><input type="text" name="TANF"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="TANF" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">General Assistance (GA)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="GA" value="1"></td>
-	        <td rowspan="2"><input type="text" name="GA"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="GA" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Retirement income from Social Security</td>
-	        <td>No</td>
-	        <td><input type="radio" name="RISS" value="1"></td>
-	        <td rowspan="2"><input type="text" name="RISS"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="RISS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Veteran’s Pension</td>
-	        <td>No</td>
-	        <td><input type="radio" name="VP" value="1"></td>
-	        <td rowspan="2"><input type="text" name="VP"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="VP" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Pension from former job</td>
-	        <td>No</td>
-	        <td><input type="radio" name="PFFJ" value="1"></td>
-	        <td rowspan="2"><input type="text" name="PFFJ"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="PFFJ" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Child Support</td>
-	        <td>No</td>
-	        <td><input type="radio" name="CS" value="1"></td>
-	        <td rowspan="2"><input type="text" name="CS"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="CS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Alimony or other spousal support</td>
-	        <td>No</td>
-	        <td><input type="radio" name="AOSS" value="1"></td>
-	        <td rowspan="2"><input type="text" name="AOSS"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="AOSS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Other source</td>
-	        <td>No</td>
-	        <td><input type="radio" name="OS" value="1"></td>
-	        <td rowspan="2"><input type="text" name="OS"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="OS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <th>Total Monthly Income</th>
-	        <td>Monthly income from all sources</td>
-	        <td colspan="2"></td>
-	        <td><input type="text" name="MI"></td>
-	    </tr>
-	</table>
-	
-	<!--page 4-->	
-	<table border="1">
-	    <caption>Non-Cash Benefit –Program-Specific Data Element</caption>
-        <tr>
-	        <th rowspan="4">Non-Cash Benefit</th>
-	        <th rowspan="4">Non-Cash benefit received from any source in past 30 days?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="NCB" value="1"></td>
-	    </tr> 
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="NCB" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td>Don't know</td>
-	        <td><input type="radio" name="NCB" value="3"></td>
-	    </tr>
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="NCB" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th></th>
-	        <th>Source of Non-Cash Benefit</th>
-	        <th colspan="2">Receiving Benefit</th>
-	    </tr>
-	    <tr>
-	        <td rowspan="22"></td>
-	        <td rowspan="2">Supplemental Nutrition Assistance Program (SNAP)(Previously known as Food Stamps)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="SNAP" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="SNAP" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">MEDICAID health insurance program (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="MEDICAID" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="MEDICAID" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">MEDICARE health insurance program (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="MEDICARE" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="MEDICARE" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">State Children’s Health Insurance Program (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="SCHIP" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="SCHIP" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Special Supplemental Nutrition Program for Women,Infants, and Children (WIC)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="WIC" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="WIC" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Veteran’s Administration (VA) Medical Services</td>
-	        <td>No</td>
-	        <td><input type="radio" name="VA" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="VA" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">TANF Child Care services (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="TCCS" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="TCCS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">TANF transportation services (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="TTS" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="TTS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Other TANF-funded services (or use local name)</td>
-	        <td>No</td>
-	        <td><input type="radio" name="OTS" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="OTS" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Section 8, public housing, or other rental assistance</td>
-	        <td>No</td>
-	        <td><input type="radio" name="SPHORA" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="SPHORA" value="2"></td>
-	    </tr>
-	    <tr>
-	        <td rowspan="2">Other source</td>
-	        <td>No</td>
-	        <td><input type="radio" name="OS2" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="OS2" value="2"></td>
-	    </tr>
-	</table>
-	
-	<table border="1">
-	<caption>Physical Disability –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Physical Disability</th>
-	        <td>No</td>
-	        <td><input type="radio" name="PD" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="PD" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="PD" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="PD" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q" value="4"></td>
-	    </tr>
-	</table>  
-	
-	<table border="1">
-	<caption>Developmental Disability –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Developmental disability</th>
-	        <td>No</td>
-	        <td><input type="radio" name="DD" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="DD" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="DD" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="DD" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q2" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q2" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q2" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q2" value="4"></td>
-	    </tr>
-	</table>
-	
-	<!--page 5-->
-	<table border="1">
-	<caption>Chronic Health Condition –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Chronic Health Condition</th>
-	        <td>No</td>
-	        <td><input type="radio" name="CHC" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="CHC" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="CHC" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="CHC" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q3" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q3" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q3" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q3" value="4"></td>
-	    </tr>
-	</table>
-	
-	<table border="1">
-	<caption>HIV / AIDS–Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">HIV / AIDS</th>
-	        <td>No</td>
-	        <td><input type="radio" name="HA" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="HA" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="HA" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="HA" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If yes) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q4" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q4" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q4" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q4" value="4"></td>
-	    </tr>
-	</table>
-	
-	<table border="1">
-	<caption>Mental Health –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Mental Health Problem</th>
-	        <td>No</td>
-	        <td><input type="radio" name="MHP" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="MHP" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="MHP" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="MHP" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If client has a mental health problem) Expected to be of long-continued and indefinite duration and substantially impairs ability to live independently?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q5" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q5" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q5" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q5" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If client has a mental health problem) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q6" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q6" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q6" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q6" value="4"></td>
-	    </tr>
-	</table>
-	
-    <table border="1">
-	<caption>Substance Abuse –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="6">Substance Abuse Problem</th>
-	        <td>No</td>
-	        <td><input type="radio" name="SAP" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Alcohol Abuse</td>
-	        <td><input type="radio" name="SAP" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Drug Abuse</td>
-	        <td><input type="radio" name="SAP" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Both -Alcohol and Drug</td>
-	        <td><input type="radio" name="SAP" value="4"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="SAP" value="5"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="SAP" value="6"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If client has a substance abuse problem) Expected to be of long-continued and indefinite duration and substantially impairs ability to live independently?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q7" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q7" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q7" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q7" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If client has a substance abuse problem) Currently receiving services or treatment for this condition or received services/treatment prior to exiting the program?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q8" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q8" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q8" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q8" value="4"></td>
-	    </tr>
-	</table>
-	
-	<!--page 6-->
-	<table border="1">
-	<caption>Domestic Violence –Program-Specific Data Element</caption>
-	    <tr>
-	        <th rowspan="4">Domestic Violence Victim/Survivor</th>
-	        <td>No</td>
-	        <td><input type="radio" name="DVV" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="DVV" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="DVV" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="DVV" value="4"></td>
-	    </tr>
-	    <tr>
-	        <th rowspan="4">(If yes) When experience occurred?</th>
-	        <td>No</td>
-	        <td><input type="radio" name="Q9" value="1"></td>
-	    </tr>
-	    <tr>
-	        <td>Yes</td>
-	        <td><input type="radio" name="Q9" value="2"></td>
-	    </tr>  
-	    <tr>
-	        <td>Don’t Know</td>
-	        <td><input type="radio" name="Q9" value="3"></td>
-	    </tr>  
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="radio" name="Q9" value="4"></td>
-	    </tr>
-	</table>
-	
-	
-	
-	<table border="1">
-	<caption>Services Provided</caption>
-	    <tr>
-	        <td>Outreach</td>
-	        <td><input type="checkbox" name="SP" value="O" /></td>
-	    </tr>
-	    <tr>
-	        <td>Case Management</td>
-	        <td><input type="checkbox" name="SP" value="CM" /></td>
-	    </tr>
-	    <tr>
-	        <td>Life Skills (Outside of Case Management)</td>
-	        <td><input type="checkbox" name="SP" value="LS" /></td>
-	    </tr>
-	    <tr>
-	        <td>Alcohol or drug abuse services</td>
-	        <td><input type="checkbox" name="SP" value="ADAS" /></td>
-	    </tr>
-	    <tr>
-	        <td>Mental health services </td>
-	        <td><input type="checkbox" name="SP" value="MHS" /></td>
-	    </tr>
-	    <tr>
-	        <td>HIV / AIDS–related services </td>
-	        <td><input type="checkbox" name="SP" value="HS" /></td>
-	    </tr>
-	    <tr>
-	        <td>Other health care services </td>
-	        <td><input type="checkbox" name="SP" value="OHCS" /></td>
-	    </tr>
-	    <tr>
-	        <td>Education</td>
-	        <td><input type="checkbox" name="SP" value="E" /></td>
-	    </tr>
-	    <tr>
-	        <td>Housing placement </td>
-	        <td><input type="checkbox" name="SP" value="HP" /></td>
-	    </tr>
-	    <tr>
-	        <td>Employment assistance </td>
-	        <td><input type="checkbox" name="SP" value="EA" /></td>
-	    </tr>
-	    <tr>
-	        <td>Child care </td>
-	        <td><input type="checkbox" name="SP" value="CC" /></td>
-	    </tr>
-	    <tr>
-	        <td>Transportation</td>
-	        <td><input type="checkbox" name="SP" value="T" /></td>
-	    </tr>
-	    <tr>
-	        <td>Legal</td>
-	        <td><input type="checkbox" name="SP" value="L" /></td>
-	    </tr>
-	    <tr>
-	        <td>Deceased</td>
-	        <td><input type="checkbox" name="SP" value="D" /></td>
-	    </tr>
-	    <tr>
-	        <td>Other (Describe) </td>
-	        <td><input type="checkbox" name="SP" value="O" /></td>
-	    </tr>
-	    <tr>
-	        <td>Don’t know</td>
-	        <td><input type="checkbox" name="SP" value="DK" /></td>
-	    </tr>
-	    <tr>
-	        <td>Refused</td>
-	        <td><input type="checkbox" name="SP" value="R" /></td>
-	    </tr>
-	</table>
-	
-
-	<h2>Enrollment Exit Date</h2>
-	<p><input type="date" name="date"></p>
-</form>
-</div>
+ 
 {% endblock %}
